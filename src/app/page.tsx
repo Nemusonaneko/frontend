@@ -116,7 +116,7 @@ export default function Home() {
           </div>
           <div className="lg:visible max-lg:hidden">
             <div className="gap-2 flex">
-              <div className="min-w-fit min-h-fit">
+              <div className="min-w-fit min-h-fit mt-auto">
                 <Image
                   src={genData?.url ?? dogo}
                   alt="image"
@@ -124,7 +124,7 @@ export default function Home() {
                   width={512}
                 />
               </div>
-              <div className="w-full flex flex-col mt-auto">
+              <div className="w-full flex flex-col justify-center mt-auto">
                 <div className="w-full">
                   <p className="text-sm">Positive Prompts</p>
                   <textarea
@@ -202,7 +202,7 @@ export default function Home() {
                     <p className="text-bold text-sm">Seed</p>
                     <input
                       {...register("seed")}
-                      className="bg-[#474678]  w-full h-6"
+                      className="bg-[#474678] w-full h-6 p-1"
                       min={-1}
                       onChange={(x) =>
                         !Number.isNaN(Number(x.target.value)) ||
@@ -418,7 +418,7 @@ export default function Home() {
                 <p className="text-bold text-sm">Seed</p>
                 <input
                   {...register("seed")}
-                  className="bg-[#474678]  w-full h-6"
+                  className="bg-[#474678] w-full h-6 p-1"
                   onChange={(x) =>
                     !Number.isNaN(Number(x.target.value)) ||
                     x.target.value === "-"
