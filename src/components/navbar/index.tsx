@@ -11,7 +11,7 @@ export default function NavBar() {
   return (
     <>
       <nav className="bg-[#0d3b66] border-gray-500">
-        <div className="w-full flex items-center gap-2 mx-auto justify-between px-4">
+        <div className="w-full flex items-center gap-2 mx-auto justify-between px-2 py-1">
           <Link
             href="/"
             className="flex items-center gap-2 hover:text-gray-300"

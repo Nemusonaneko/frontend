@@ -43,7 +43,10 @@ export default function ImportTagsModal({
       className="fixed inset-0 bg-[#474678] backdrop-blur-sm bg-opacity-75 flex justify-center items-center"
       onClick={() => setOpened(false)}
     >
-      <form onSubmit={handleSubmit(onSubmit)} className="w-full flex justify-center max-w-md">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="w-full flex justify-center max-w-md"
+      >
         <div
           className="max-lg:hidden h-fit w-full bg-[#2e2d4d] rounded-md relative"
           onClick={(e) => e.stopPropagation()}
@@ -82,6 +85,7 @@ export default function ImportTagsModal({
             <input
               className="w-full bg-[#474678] h-8 pl-1 text-sm"
               {...register("url")}
+              onChange={(x) => setValue("url", x.target.value)}
             />
             <button
               className="w-full bg-green-600 hover:bg-green-500 rounded py-1 px-1 text-bold text-md"
@@ -129,6 +133,7 @@ export default function ImportTagsModal({
             <input
               className="w-full bg-[#474678] h-8 pl-1 text-sm"
               {...register("url")}
+              onChange={(x) => setValue("url", x.target.value)}
             />
             <button
               className="w-full bg-green-600 hover:bg-green-500 rounded py-1 px-1 text-bold text-md"
