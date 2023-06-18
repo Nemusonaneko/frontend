@@ -1,14 +1,18 @@
 import NavBar from "@/components/navbar";
 import "./globals.css";
 import { Inter } from "next/font/google";
+import Providers from "@/components/providers";
 import { Metadata } from "next";
-import Providers from "./providers";
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Nemu's Waifu Generator",
+  title: "Nemu's Waifu Gen",
   description: "UwU",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({

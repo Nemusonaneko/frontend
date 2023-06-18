@@ -15,6 +15,7 @@ import translateStatus from "@/utils/translateStatus";
 import ImportTagsModal from "@/components/importTagsModal";
 import downloadImage from "@/utils/downloadImage";
 import downloadPrompt from "@/utils/downloadPrompt";
+import toast from "react-hot-toast";
 
 export default function Home() {
   const [genFetched, setGenFetched] = React.useState<boolean>(false);
@@ -25,6 +26,7 @@ export default function Home() {
   );
   const [cooldown, setCooldown] = React.useState<number>(0);
   const [cooldownEnd, setCooldownEnd] = React.useState<number>(Date.now());
+  const [toastId, setToastId] = React.useState<string | null>(null);
 
   const queryClient = useQueryClient();
 
@@ -67,6 +69,8 @@ export default function Home() {
       {
         onSuccess: (data) => {
           setValue("seed", data.seed);
+          toast.remove(toastId!);
+          toast.success("Successfully fetched image");
           setGenFetched(true);
           queryClient.invalidateQueries();
         },
@@ -80,6 +84,7 @@ export default function Home() {
     lastGenValues,
     queryClient,
     setValue,
+    toastId,
   ]);
 
   React.useEffect(() => {
@@ -96,6 +101,8 @@ export default function Home() {
         setLastGenValues(data);
         setGenFetched(false);
         setCooldownEnd(Date.now() + 30 * 1e3);
+        toast.success("Added prompts to queue.");
+        setToastId(toast.loading("Processing generation prompts..."));
         queryClient.invalidateQueries();
       },
     });

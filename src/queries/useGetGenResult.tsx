@@ -1,6 +1,7 @@
 import { HistoryValues, ResultValues } from "@/types";
 import translateModel from "@/utils/translateModel";
 import { useMutation } from "react-query";
+import toast from "react-hot-toast";
 
 async function getGenResult(values: ResultValues) {
   try {
@@ -50,6 +51,7 @@ export default function useGetGenResult() {
       currentLocalStorage.unshift(toStore);
       try {
         localStorage.setItem("history", JSON.stringify(currentLocalStorage));
+        toast.success("Added image to history.")
       } catch {
         try {
           let count = 0;
@@ -60,6 +62,9 @@ export default function useGetGenResult() {
             count++;
             currentSize = JSON.stringify(currentLocalStorage).length;
           }
+          toast.success(
+            `Added image to history while removing the last ${count} images.`
+          );
           localStorage.setItem("history", JSON.stringify(currentLocalStorage));
         } catch (error: any) {
           throw new Error(error.message);

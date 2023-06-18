@@ -7,7 +7,7 @@ async function getCount() {
       const result = await res.text();
       return JSON.parse(result);
     } else {
-      throw new Error("Failed to get waifu count");
+      throw new Error("Failed to get count");
     }
   } catch (error: any) {
     throw new Error(error.message);
@@ -16,6 +16,6 @@ async function getCount() {
 
 export default function useGetCount() {
   return useQuery(["count"], () => getCount(), {
-    refetchInterval: 10000,
+    refetchInterval: 5000,
   });
 }
