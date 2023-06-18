@@ -70,7 +70,7 @@ export default function ImportTagsModal({
           <div className="p-2 w-full flex flex-col gap-2">
             <p className="text-bold text-sm">Select Site</p>
             <select
-              className="w-full bg-[#474678] h-6"
+              className="w-full bg-[#474678] h-8"
               {...register("site")}
               value={getValues("site")}
               onChange={(x) => setValue("site", x.target.value)}
@@ -80,7 +80,7 @@ export default function ImportTagsModal({
             </select>
             <p className="text-bold text-sm">Input URL</p>
             <input
-              className="w-full bg-[#474678] h-6 pl-1 text-sm"
+              className="w-full bg-[#474678] h-8 pl-1 text-sm"
               {...register("url")}
             />
             <button
@@ -117,7 +117,7 @@ export default function ImportTagsModal({
           <div className="p-2 w-full flex flex-col gap-2">
             <p className="text-bold text-sm">Select Site</p>
             <select
-              className="w-full bg-[#474678] h-6"
+              className="w-full bg-[#474678] h-8"
               {...register("site")}
               value={getValues("site")}
               onChange={(x) => setValue("site", x.target.value)}
@@ -127,7 +127,7 @@ export default function ImportTagsModal({
             </select>
             <p className="text-bold text-sm">Input URL</p>
             <input
-              className="w-full bg-[#474678] h-6 pl-1 text-sm"
+              className="w-full bg-[#474678] h-8 pl-1 text-sm"
               {...register("url")}
             />
             <button

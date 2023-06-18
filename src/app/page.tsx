@@ -70,7 +70,7 @@ export default function Home() {
         onSuccess: (data) => {
           setValue("seed", data.seed);
           toast.remove(toastId!);
-          toast.success("Successfully fetched image");
+          toast.success("Successfully generated image");
           setGenFetched(true);
           queryClient.invalidateQueries();
         },
@@ -195,7 +195,7 @@ export default function Home() {
                     <p className="text-bold text-sm">Model</p>
                     <select
                       {...register("model")}
-                      className="w-full bg-[#474678] h-6"
+                      className="w-full bg-[#474678] h-8"
                       placeholder="Select Model"
                       onChange={(x) => setValue("model", x.target.value)}
                       disabled={disableInput}
@@ -209,7 +209,7 @@ export default function Home() {
                     <p className="text-bold text-sm">Seed</p>
                     <input
                       {...register("seed")}
-                      className="bg-[#474678] w-full h-6 p-1"
+                      className="bg-[#474678] w-full h-8 p-1"
                       min={-1}
                       onChange={(x) =>
                         !Number.isNaN(Number(x.target.value)) ||
@@ -411,7 +411,7 @@ export default function Home() {
                 <p className="text-bold text-sm">Model</p>
                 <select
                   {...register("model")}
-                  className="w-full bg-[#474678] h-6"
+                  className="w-full bg-[#474678] h-8"
                   placeholder="Select Model"
                   onChange={(x) => setValue("model", x.target.value)}
                   disabled={disableInput}
@@ -425,7 +425,7 @@ export default function Home() {
                 <p className="text-bold text-sm">Seed</p>
                 <input
                   {...register("seed")}
-                  className="bg-[#474678] w-full h-6 p-1"
+                  className="bg-[#474678] w-full h-8 p-1"
                   onChange={(x) =>
                     !Number.isNaN(Number(x.target.value)) ||
                     x.target.value === "-"

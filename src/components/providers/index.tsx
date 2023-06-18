@@ -18,6 +18,7 @@ export default function Providers({ children }: { children: any }) {
               background: "#474678",
               color: "#ffffff",
             },
+            duration: 3000
           }}
         />
       </QueryClientProvider>
