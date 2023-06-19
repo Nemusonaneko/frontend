@@ -2,11 +2,10 @@ import NavBar from "@/components/navbar";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Providers from "@/components/providers";
-import { Metadata } from "next";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Nemu's Waifu Gen",
   description: "UwU",
   icons: {

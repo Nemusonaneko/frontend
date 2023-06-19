@@ -59,7 +59,7 @@ export default function HistoryModal({
         onClick={(e) => e.stopPropagation()}
       >
         <button
-          className="text-white text-xl absolute top-1 right-1 hover:bg-[#474678] rounded-md"
+          className="text-xl absolute top-1 right-1 hover:bg-[#474678] rounded-md"
           onClick={() => setOpened(false)}
         >
           <svg
@@ -130,7 +130,7 @@ export default function HistoryModal({
         onClick={(e) => e.stopPropagation()}
       >
         <button
-          className="text-white text-xl absolute top-1 right-1 hover:bg-[#474678] rounded-md"
+          className="text-xl absolute top-1 right-1 hover:bg-[#474678] rounded-md"
           onClick={() => setOpened(false)}
         >
           <svg
