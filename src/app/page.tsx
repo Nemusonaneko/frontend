@@ -70,7 +70,7 @@ export default function Home() {
         onSuccess: (data) => {
           setValue("seed", data.seed);
           toast.remove(toastId!);
-          toast.success("Successfully generated image");
+          toast.success("Generated image.");
           setGenFetched(true);
           queryClient.invalidateQueries();
         },
@@ -102,7 +102,7 @@ export default function Home() {
         setGenFetched(false);
         setCooldownEnd(Date.now() + 30 * 1e3);
         toast.success("Added prompts to queue.");
-        setToastId(toast.loading("Processing generation prompts..."));
+        setToastId(toast.loading("Processing prompts..."));
         queryClient.invalidateQueries();
       },
     });
@@ -112,14 +112,14 @@ export default function Home() {
     <>
       <div className="w-full">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <p className="text-sm">{`Amount Generated (Started counting at: 2023/06/15 10:50:00 UTC or ${(
+          <p className="text-sm">{`Amount Generated (Started counting ${(
             (Date.now() / 1e3 - 1686826200) /
             86400
           ).toFixed(2)} days ago)`}</p>
           <div className="flex gap-3 text-sm">
             <p>{`This hour: ${waifuCount && waifuCount.hour}`}</p>
-            <p>{`One day: ${waifuCount && waifuCount.day}`}</p>
-            <p>{`One week: ${waifuCount && waifuCount.week}`}</p>
+            <p>{`This day: ${waifuCount && waifuCount.day}`}</p>
+            <p>{`This week: ${waifuCount && waifuCount.week}`}</p>
           </div>
           <div className="lg:visible max-lg:hidden">
             <div className="gap-2 flex">

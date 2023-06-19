@@ -15,7 +15,7 @@ export default function useGetApiStatus() {
   return useQuery(["apiStatus"], () => getApiStatus(), {
     refetchInterval: 30000,
     onError: () => {
-      toast.error("API failed to respond successfully");
+      toast.error("API failed to respond.");
     },
   });
 }

@@ -34,6 +34,13 @@ export default function NavBar() {
             >
               <p>Discord</p>
             </Link>
+            <Link
+              href="https://huggingface.co/spaces/CompVis/stable-diffusion-license"
+              target="_blank"
+              className="text-lg hover:text-gray-300"
+            >
+              License
+            </Link>
             {/* <button className="bg-blue-600 rounded-xl px-2 py-1 text-lg hover:bg-blue-500">
               Connect Wallet
             </button> */}
@@ -69,6 +76,14 @@ export default function NavBar() {
               <li className="hover:bg-blue-700">
                 <Link href="https://discord.gg/nbEN88q6dw" target="_blank">
                   <button className="py-2 w-full">Discord</button>
+                </Link>
+              </li>
+              <li className="hover:bg-blue-700">
+                <Link
+                  href="https://huggingface.co/spaces/CompVis/stable-diffusion-license"
+                  target="_blank"
+                >
+                  <button className="py-2 w-full">License</button>
                 </Link>
               </li>
               {/* <li className="hover:bg-blue-700">

@@ -3,6 +3,7 @@ import downloadImage from "@/utils/downloadImage";
 import downloadPrompt from "@/utils/downloadPrompt";
 import Image from "next/image";
 import { UseFormSetValue } from "react-hook-form";
+import { toast } from "react-hot-toast";
 import { useQueryClient } from "react-query";
 
 export default function HistoryModal({
@@ -33,6 +34,7 @@ export default function HistoryModal({
     setValues("seed", data.seed);
     setValues("model", data.model);
     setOpened(false);
+    toast.success("Replicated tags.")
   };
 
   const onDelete = () => {
@@ -43,6 +45,7 @@ export default function HistoryModal({
     localStorage.setItem("history", JSON.stringify(current));
     queryClient.invalidateQueries();
     setOpened(false);
+    toast.success("Deleted image.")
   };
 
   if (!opened) return null;

@@ -28,11 +28,11 @@ export default function ImportTagsModal({
         setValues("positivePrompts", data);
         setOpened(false);
         reset();
-        toast.success("Successfully imported tags");
+        toast.success("Successfully imported tags.");
       },
       onError: () => {
         setOpened(false);
-        toast.error("Failed to import tags");
+        toast.error("Failed to import tags.");
       },
     });
   };

@@ -3,6 +3,7 @@ import HistoryImage from "../history/historyImage/";
 import { UseFormSetValue } from "react-hook-form";
 import { FormValues, HistoryValues } from "@/types";
 import { useQueryClient } from "react-query";
+import { toast } from "react-hot-toast";
 
 export default function History({
   setValues,
@@ -17,10 +18,11 @@ export default function History({
   const deleteAll = () => {
     localStorage.removeItem("history");
     queryClient.invalidateQueries();
+    toast.success("Deleted all images.")
   };
 
   return (
-    <div className="w-full p-4 items">
+    <div className="w-full pt-2">
       <div className="flex gap-2 items-center">
         <h1 className="font-bold text-2xl lg:text-3xl">
           Recently Generated Images
