@@ -2,6 +2,7 @@ import { FormValues, HistoryValues } from "@/types";
 import downloadImage from "@/utils/downloadImage";
 import downloadPrompt from "@/utils/downloadPrompt";
 import Image from "next/image";
+import React from "react";
 import { UseFormSetValue } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { useQueryClient } from "react-query";
@@ -34,7 +35,7 @@ export default function HistoryModal({
     setValues("seed", data.seed);
     setValues("model", data.model);
     setOpened(false);
-    toast.success("Replicated tags.")
+    toast.success("Replicated tags.");
   };
 
   const onDelete = () => {
@@ -45,7 +46,7 @@ export default function HistoryModal({
     localStorage.setItem("history", JSON.stringify(current));
     queryClient.invalidateQueries();
     setOpened(false);
-    toast.success("Deleted image.")
+    toast.success("Deleted image.");
   };
 
   if (!opened) return null;
@@ -55,7 +56,7 @@ export default function HistoryModal({
       onClick={() => setOpened(false)}
     >
       <div
-        className=" max-lg:hidden w-1/2 max-w-4xl h-fit bg-[#2e2d4d] rounded-md relative"
+        className=" max-lg:hidden w-fit  max-w-5xl h-fit bg-[#2e2d4d] rounded-md relative"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -79,42 +80,15 @@ export default function HistoryModal({
         </button>
 
         <div className="p-2">
-          <div className="flex">
-            <div className="flex-col flex gap-2 items-center">
-              <Image src={url} height={256} width={256} alt="image" />
-              <button
-                className="w-[224px] bg-green-600 hover:bg-green-500 rounded p-1"
-                onClick={() => downloadImage(data)}
-              >
-                Save
-              </button>
-              <button
-                className="w-[224px] bg-green-600 hover:bg-green-500 rounded p-1"
-                onClick={() => downloadPrompt(data)}
-              >
-                Save Tags
-              </button>
-              <button
-                className="w-[224px] bg-green-600 hover:bg-green-500 rounded p-1 disabled:bg-gray-500"
-                onClick={() => onReplicate()}
-                disabled={isDisabled}
-              >
-                Replicate
-              </button>
-              <button
-                className="w-[224px] bg-red-600 hover:bg-red-500 rounded p-1"
-                onClick={() => onDelete()}
-              >
-                Delete
-              </button>
-            </div>
+          <div className="columns-2">
+            <Image src={url} height={512} width={512} alt="image" />
             <div className="text-md break-all p-2">
               <p>{`Positive Prompts:`}</p>
-              <p className="text-sm max-h-[128px] overflow-y-scroll">
+              <p className="text-sm max-h-40 overflow-y-auto">
                 {data.positivePrompts}
               </p>
               <p>{`Negative Prompts: `}</p>
-              <p className="text-sm max-h-[128px] overflow-y-scroll">
+              <p className="text-sm max-h-40 overflow-y-auto">
                 {data.negativePrompts}
               </p>
               <p>{`CFG Scale: ${data.cfgScale}`}</p>
@@ -122,6 +96,33 @@ export default function HistoryModal({
               <p>{`Seed: ${data.seed}`}</p>
               <p>{`Model: ${data.model}`}</p>
             </div>
+          </div>
+          <div className="flex gap-1 pt-1 items-center justify-start">
+            <button
+              className="w-32 bg-green-600 hover:bg-green-500 rounded p-1"
+              onClick={() => downloadImage(data)}
+            >
+              Save
+            </button>
+            <button
+              className="w-32 bg-green-600 hover:bg-green-500 rounded p-1"
+              onClick={() => downloadPrompt(data)}
+            >
+              Save Tags
+            </button>
+            <button
+              className="w-32 bg-green-600 hover:bg-green-500 rounded p-1 disabled:bg-gray-500"
+              onClick={() => onReplicate()}
+              disabled={isDisabled}
+            >
+              Replicate
+            </button>
+            <button
+              className="w-32 bg-red-600 hover:bg-red-500 rounded p-1"
+              onClick={() => onDelete()}
+            >
+              Delete
+            </button>
           </div>
         </div>
       </div>
@@ -150,15 +151,15 @@ export default function HistoryModal({
         </button>
         <div className=" p-4 flex flex-col gap-1">
           <div className="justify-center flex">
-            <Image src={url} height={256} width={256} alt="image" />
+            <Image src={url} height={512} width={512} alt="image" />
           </div>
           <div className="text-md break-all pt-2">
             <p>{`Positive Prompts:`}</p>
-            <p className="text-sm max-h-[128px] overflow-y-scroll">
+            <p className="text-sm max-h-[128px] overflow-y-auto">
               {data.positivePrompts}
             </p>
             <p>{`Negative Prompts: `}</p>
-            <p className="text-sm max-h-[128px] overflow-y-scroll">
+            <p className="text-sm max-h-[128px] overflow-y-auto">
               {data.negativePrompts}
             </p>
             <p>{`CFG Scale: ${data.cfgScale}`}</p>
@@ -168,13 +169,13 @@ export default function HistoryModal({
           </div>
           <div className="flex gap-2 justify-center">
             <button
-              className="bg-green-600 hover:bg-green-500 rounded  w-24"
+              className="bg-green-600 hover:bg-green-500 rounded w-24"
               onClick={() => downloadImage(data)}
             >
               Save
             </button>
             <button
-              className="bg-green-600 hover:bg-green-500 rounded  w-24"
+              className="bg-green-600 hover:bg-green-500 rounded w-24"
               onClick={() => downloadPrompt(data)}
             >
               Save Tags

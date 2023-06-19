@@ -23,7 +23,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Providers>
           <NavBar />
-          <div className="m-auto max-w-7xl px-1 py-1">{children}</div>
+          <div className="m-auto max-w-7xl px-1 py-1 h-screen">{children}</div>
         </Providers>
       </body>
     </html>
