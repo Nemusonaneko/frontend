@@ -68,7 +68,6 @@ export default function Main() {
       { form: lastGenValues, jobId: returnedJobId },
       {
         onSuccess: (data) => {
-          setValue("seed", data.seed);
           toast.remove(toastId!);
           toast.success("Generated image.");
           setGenFetched(true);
