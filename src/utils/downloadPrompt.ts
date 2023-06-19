@@ -16,6 +16,6 @@ export default function downloadPrompt(data: GenDataValues | HistoryValues) {
       JSON.stringify(toSave)
     )}`
   );
-  a.download = `nemuswaifugen-${data.base64.slice(0, 10)}-${data.seed}.txt`;
+  a.download = `nemuswaifugen-${data.base64.slice(100, 110)}-${data.seed}.txt`;
   a.click();
 }
