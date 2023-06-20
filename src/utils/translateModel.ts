@@ -6,6 +6,8 @@ export default function translateModel(model: string) {
       return "aom";
     case "Counterfeit V2.5":
       return "counterfeit";
+    case "Nemu (WIP)": 
+      return "nemu";
     default:
       break;
   }
