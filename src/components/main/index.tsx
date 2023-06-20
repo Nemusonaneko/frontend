@@ -111,10 +111,7 @@ export default function Main() {
     <>
       <div className="w-full">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <p className="text-sm">{`Amount Generated (Started counting ${(
-            (Date.now() / 1e3 - 1686826200) /
-            86400
-          ).toFixed(2)} days ago)`}</p>
+          <p className="text-sm">{`Amount Generated:`}</p>
           <div className="flex gap-3 text-sm">
             <p>{`This hour: ${waifuCount && waifuCount.hour}`}</p>
             <p>{`This day: ${waifuCount && waifuCount.day}`}</p>
