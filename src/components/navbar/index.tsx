@@ -10,7 +10,7 @@ export default function NavBar() {
 
   return (
     <>
-      <nav className="bg-[#0d3b66] border-gray-500">
+      <nav className="bg-[#001933] border-gray-500">
         <div className="w-full flex items-center gap-2 mx-auto justify-between px-2 py-1">
           <Link
             href="/"
@@ -68,17 +68,17 @@ export default function NavBar() {
         {opened && (
           <div className="max-sm:visible sm:hidden w-full">
             <ul className="font-bold text-center text-xl">
-              <li className="hover:bg-blue-700">
+              <li className="hover:bg-violet-900">
                 <Link href="https://twitter.com/waifugeneth" target="_blank">
                   <button className="py-2 w-full">Twitter</button>
                 </Link>
               </li>
-              <li className="hover:bg-blue-700">
+              <li className="hover:bg-violet-900">
                 <Link href="https://discord.gg/nbEN88q6dw" target="_blank">
                   <button className="py-2 w-full">Discord</button>
                 </Link>
               </li>
-              <li className="hover:bg-blue-700">
+              <li className="hover:bg-violet-900">
                 <Link
                   href="https://huggingface.co/spaces/CompVis/stable-diffusion-license"
                   target="_blank"

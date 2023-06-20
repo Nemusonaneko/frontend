@@ -56,7 +56,7 @@ export default function HistoryModal({
       onClick={() => setOpened(false)}
     >
       <div
-        className=" max-lg:hidden w-fit  max-w-5xl h-fit bg-[#2e2d4d] rounded-md relative"
+        className=" max-lg:hidden w-fit  max-w-5xl h-fit bg-[#00264F] rounded-md relative"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -127,7 +127,7 @@ export default function HistoryModal({
         </div>
       </div>
       <div
-        className=" lg:hidden w-4/5 h-fit bg-[#2e2d4d] rounded-md relative"
+        className=" lg:hidden w-4/5 h-fit bg-[#00264F] rounded-md relative"
         onClick={(e) => e.stopPropagation()}
       >
         <button

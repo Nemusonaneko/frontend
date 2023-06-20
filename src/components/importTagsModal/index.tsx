@@ -40,7 +40,7 @@ export default function ImportTagsModal({
   if (!opened) return null;
   return (
     <div
-      className="fixed inset-0 bg-[#474678] backdrop-blur-sm bg-opacity-75 flex justify-center items-center"
+      className="fixed inset-0 bg-[#00264F] backdrop-blur-sm bg-opacity-75 flex justify-center items-center"
       onClick={() => setOpened(false)}
     >
       <form
@@ -48,11 +48,11 @@ export default function ImportTagsModal({
         className="w-full flex justify-center max-w-md"
       >
         <div
-          className="max-lg:hidden h-fit w-full bg-[#2e2d4d] rounded-md relative"
+          className="max-lg:hidden h-fit w-full bg-[#002C5C] rounded-md relative"
           onClick={(e) => e.stopPropagation()}
         >
           <button
-            className="text-xl absolute top-1 right-1 hover:bg-[#474678] rounded-md"
+            className="text-xl absolute top-1 right-1 hover:bg-[#00264F] rounded-md"
             onClick={() => setOpened(false)}
           >
             <svg
@@ -96,7 +96,7 @@ export default function ImportTagsModal({
           </div>
         </div>
         <div
-          className="lg:hidden w-3/4 bg-[#2e2d4d] rounded-md relative"
+          className="lg:hidden w-3/4 bg-[#002C5C] rounded-md relative"
           onClick={(e) => e.stopPropagation()}
         >
           <button

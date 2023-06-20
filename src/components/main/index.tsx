@@ -135,7 +135,7 @@ export default function Main() {
                   <p className="text-sm">Positive Prompts</p>
                   <textarea
                     {...register("positivePrompts")}
-                    className="bg-[#474678] w-full p-1 resize-none h-36"
+                    className="bg-[#00264F] w-full p-1 resize-none h-36"
                     onChange={(x) =>
                       setValue("positivePrompts", x.target.value)
                     }
@@ -146,7 +146,7 @@ export default function Main() {
                   <p className="text-sm">Negative Prompts</p>
                   <textarea
                     {...register("negativePrompts")}
-                    className="bg-[#474678] w-full p-1 resize-none h-36"
+                    className="bg-[#00264F] w-full p-1 resize-none h-36"
                     onChange={(x) =>
                       setValue("negativePrompts", x.target.value)
                     }
@@ -194,7 +194,7 @@ export default function Main() {
                     <p className="text-bold text-sm">Model</p>
                     <select
                       {...register("model")}
-                      className="w-full bg-[#474678] h-8"
+                      className="w-full bg-[#00264F] h-8"
                       placeholder="Select Model"
                       onChange={(x) => setValue("model", x.target.value)}
                       disabled={disableInput}
@@ -209,7 +209,7 @@ export default function Main() {
                     <p className="text-bold text-sm">Seed</p>
                     <input
                       {...register("seed")}
-                      className="bg-[#474678] w-full h-8 p-1"
+                      className="bg-[#00264F] w-full h-8 p-1"
                       min={-1}
                       onChange={(x) =>
                         !Number.isNaN(Number(x.target.value)) ||
@@ -233,7 +233,7 @@ export default function Main() {
                   <div className="pl-2 gap-4 flex place-self-end">
                     <button
                       type="button"
-                      className="text-sm bg-[#474678] hover:bg-[#3a3a7c] rounded-md px-1 disabled:bg-gray-600"
+                      className="text-sm bg-[#00264F] hover:bg-[#3a3a7c] rounded-md px-1 disabled:bg-gray-600"
                       onClick={() => setValue("seed", genData?.seed)}
                       disabled={disableInput}
                     >
@@ -241,7 +241,7 @@ export default function Main() {
                     </button>
                     <button
                       type="button"
-                      className="text-sm bg-[#474678] hover:bg-[#3a3a7c] rounded-md px-1 disabled:bg-gray-600"
+                      className="text-sm bg-[#00264F] hover:bg-[#3a3a7c] rounded-md px-1 disabled:bg-gray-600"
                       onClick={() => setValue("seed", -1)}
                       disabled={disableInput}
                     >
@@ -358,7 +358,7 @@ export default function Main() {
               <p className="text-sm">Positive Prompts</p>
               <textarea
                 {...register("positivePrompts")}
-                className="bg-[#474678] w-full p-1 resize-none h-32"
+                className="bg-[#00264F] w-full p-1 resize-none h-32"
                 onChange={(x) => setValue("positivePrompts", x.target.value)}
                 disabled={disableInput}
               />
@@ -367,7 +367,7 @@ export default function Main() {
               <p className="text-sm">Negative Prompts</p>
               <textarea
                 {...register("negativePrompts")}
-                className="bg-[#474678] w-full p-1 resize-none h-32"
+                className="bg-[#00264F] w-full p-1 resize-none h-32"
                 onChange={(x) => setValue("negativePrompts", x.target.value)}
                 disabled={disableInput}
               />
@@ -411,7 +411,7 @@ export default function Main() {
                 <p className="text-bold text-sm">Model</p>
                 <select
                   {...register("model")}
-                  className="w-full bg-[#474678] h-8"
+                  className="w-full bg-[#00264F] h-8"
                   placeholder="Select Model"
                   onChange={(x) => setValue("model", x.target.value)}
                   disabled={disableInput}
@@ -426,7 +426,7 @@ export default function Main() {
                 <p className="text-bold text-sm">Seed</p>
                 <input
                   {...register("seed")}
-                  className="bg-[#474678] w-full h-8 p-1"
+                  className="bg-[#00264F] w-full h-8 p-1"
                   onChange={(x) =>
                     !Number.isNaN(Number(x.target.value)) ||
                     x.target.value === "-"
@@ -449,7 +449,7 @@ export default function Main() {
               <div className="pl-2 gap-4 flex place-self-end">
                 <button
                   type="button"
-                  className="text-sm bg-[#474678] hover:bg-[#3a3a7c] rounded-md px-1 disabled:bg-gray-600"
+                  className="text-sm bg-[#00264F] hover:bg-[#3a3a7c] rounded-md px-1 disabled:bg-gray-600"
                   onClick={() => setValue("seed", genData?.seed)}
                   disabled={disableInput}
                 >
@@ -457,7 +457,7 @@ export default function Main() {
                 </button>
                 <button
                   type="button"
-                  className="text-sm bg-[#474678] hover:bg-[#3a3a7c] rounded-md px-1 disabled:bg-gray-600"
+                  className="text-sm bg-[#00264F] hover:bg-[#3a3a7c] rounded-md px-1 disabled:bg-gray-600"
                   onClick={() => setValue("seed", -1)}
                   disabled={disableInput}
                 >
