@@ -79,7 +79,7 @@ export default function ImportTagsModal({
             >
               <option>Danbooru</option>
             </select>
-            <p className="text-bold text-sm">Input URL</p>
+            <p className="text-bold text-sm">Input URL or ID</p>
             <input
               className="w-full bg-[#474678] h-8 pl-1 text-sm"
               {...register("url")}
@@ -125,7 +125,7 @@ export default function ImportTagsModal({
             >
               <option>Danbooru</option>
             </select>
-            <p className="text-bold text-sm">Input URL</p>
+            <p className="text-bold text-sm">Input URL or ID</p>
             <input
               className="w-full bg-[#474678] h-8 pl-1 text-sm"
               {...register("url")}
