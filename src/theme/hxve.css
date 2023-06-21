@@ -1,0 +1,24 @@
+/*
+"name": "hxve terminal",
+"desc": "a boring, slate-grey theme",
+"auth": "hoax",
+*/
+
+:root.hxve, .hxve{
+	--bg0:#161616;
+	--bg1:#1D1D1D;
+	--bg2:#222222;
+	--bg3:#2A2A2A;
+	--text:#B9BBBE;
+	--darktext:#848587;
+
+	--red:#F92672;
+	--orange:#FD971F;
+	--yellow:#E6DB74;
+	--green:#A6E22E;
+	--blue:#66D9EF;
+	--purple:#AE81FF;
+
+  --main:var(--red);
+	--text-on-color:var(--bg0);
+}

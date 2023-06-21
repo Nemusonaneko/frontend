@@ -1,0 +1,24 @@
+/*
+"name": "greenhouse",
+"desc": "i cant tell if this is a light or a dark theme to be honest",
+"auth": "hoax",
+*/
+
+:root.greenhouse, .greenhouse{
+	--bg0:#415654;
+	--bg1:#455c5a;
+	--bg2:#3d504e;
+	--bg3:#4c6462;
+	--text:#C9DBD9;
+	--darktext:#749995;
+
+	--red:#69ADB5;
+	--orange:#69ADB5;
+	--yellow:#25808A;
+	--green:#4CD7E0;
+	--blue:#4CD7E0;
+	--purple:#4CD7E0;
+
+  --main:var(--blue);
+	--text-on-color:var(--bg0);
+}

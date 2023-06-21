@@ -1,0 +1,25 @@
+/*
+"name": "mUI light",
+"desc": "the light colours of alphabet corporation",
+"auth": "Google",
+*/
+
+/* https://m3.material.io/styles/color/overview */
+:root.google-light, .google-light{
+	--bg0:#fff;
+	--bg1:#ddd;
+	--bg2:#ccc;
+	--bg3:#bbb;
+	--text:#000;
+	--darktext:#222;
+
+	--red:#F39F97;
+	--orange:#F3C797;
+	--yellow:#F3EF97;
+	--green:#B7F397;
+	--blue:#97DCF3;
+	--purple:#E597F3;
+
+	--main:var(--green);
+	--text-on-color:var(--text);
+}

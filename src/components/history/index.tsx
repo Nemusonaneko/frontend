@@ -28,7 +28,7 @@ export default function History({
           Recently Generated Images
         </h1>
         <button
-          className="bg-red-600 hover:bg-red-500 rounded px-2 py-1 text-sm font-bold mt-1"
+          className="bg-[var(--red)] text-[color:var(--text-on-color)] hover:bg-[var(--red-50)] rounded px-2 py-1 text-sm font-bold mt-1"
           onClick={() => deleteAll()}
         >
           Delete All

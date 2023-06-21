@@ -1,0 +1,24 @@
+/*
+"name": "OLED Black",
+"desc": "for modern display panels",
+"auth": "hoax",
+*/
+
+:root.oled, .oled{
+	--bg0:#000;
+	--bg1:#111;
+	--bg2:#222;
+	--bg3:#333;
+	--text:#EAF2F1;
+	--darktext:#B2B9BD;
+
+	--red:#FF657A;
+	--orange:#FF9B5E;
+	--yellow:#FFD76D;
+	--green:#BAD761;
+	--blue:#9CD1BB;
+	--purple:#A8A9EB;
+
+  --main:var(--orange);
+	--text-on-color:var(--bg0);
+}

@@ -4,13 +4,14 @@ import Link from "next/link";
 import Image from "next/image";
 import cute from "../../../public/cute.gif";
 import React from "react";
+import ThemeSwitcher from "../themeSwitcher/index.tsx"
 
 export default function NavBar() {
   const [opened, setOpened] = React.useState<boolean>(false);
 
   return (
     <>
-      <nav className="bg-[#001933] border-gray-500">
+      <nav className="bg-[color:var(--bg1)] border-gray-500">
         <div className="w-full flex items-center gap-2 mx-auto justify-between px-2 py-1">
           <Link
             href="/"
@@ -19,6 +20,7 @@ export default function NavBar() {
             <Image src={cute} height={48} width={48} alt="cute.gif" />
             <p className="text-xl font-bold">{"Nemu's Waifu Generator"}</p>
           </Link>
+          <ThemeSwitcher />
           <div className="flex items-center gap-2 sm:visible max-sm:hidden px-2">
             <Link
               href="https://twitter.com/waifugeneth"

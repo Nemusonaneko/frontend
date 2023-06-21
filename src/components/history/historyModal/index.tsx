@@ -52,15 +52,15 @@ export default function HistoryModal({
   if (!opened) return null;
   return (
     <div
-      className="fixed inset-0 bg-[#474678] backdrop-blur-sm bg-opacity-75 flex justify-center items-center"
+      className="fixed inset-0 bg-transparent backdrop-blur-sm bg-opacity-75 flex justify-center items-center"
       onClick={() => setOpened(false)}
     >
       <div
-        className=" max-lg:hidden w-fit  max-w-5xl h-fit bg-[#00264F] rounded-md relative"
+        className=" max-lg:hidden w-fit  max-w-5xl h-fit bg-[color:var(--bg0)] rounded-md relative"
         onClick={(e) => e.stopPropagation()}
       >
         <button
-          className="text-xl absolute top-1 right-1 hover:bg-[#474678] rounded-md"
+          className="text-xl absolute top-1 right-1 hover:bg-[color:var(--bg0)] rounded-md"
           onClick={() => setOpened(false)}
         >
           <svg
@@ -99,26 +99,26 @@ export default function HistoryModal({
           </div>
           <div className="flex gap-1 pt-1 items-center justify-start">
             <button
-              className="w-32 bg-green-600 hover:bg-green-500 rounded p-1"
+              className="w-32 bg-[color:var(--green)] hover:bg-[color:var(--green-50)] rounded p-1"
               onClick={() => downloadImage(data)}
             >
               Save
             </button>
             <button
-              className="w-32 bg-green-600 hover:bg-green-500 rounded p-1"
+              className="w-32 bg-[color:var(--green)] hover:bg-[color:var(--green-50)] rounded p-1"
               onClick={() => downloadPrompt(data)}
             >
               Save Tags
             </button>
             <button
-              className="w-32 bg-green-600 hover:bg-green-500 rounded p-1 disabled:bg-gray-500"
+              className="w-32 bg-[color:var(--green)] hover:bg-[color:var(--green-50)] rounded p-1 disabled:bg-gray-500"
               onClick={() => onReplicate()}
               disabled={isDisabled}
             >
               Replicate
             </button>
             <button
-              className="w-32 bg-red-600 hover:bg-red-500 rounded p-1"
+              className="w-32 bg-[color:var(--red)] hover:bg-[color:var(--red-50)] rounded p-1"
               onClick={() => onDelete()}
             >
               Delete
@@ -169,26 +169,26 @@ export default function HistoryModal({
           </div>
           <div className="flex gap-2 justify-center">
             <button
-              className="bg-green-600 hover:bg-green-500 rounded w-24"
+              className="bg-[color:var(--green)] hover:bg-[color:var(--green-50)] rounded w-24"
               onClick={() => downloadImage(data)}
             >
               Save
             </button>
             <button
-              className="bg-green-600 hover:bg-green-500 rounded w-24"
+              className="bg-[color:var(--green)] hover:bg-[color:var(--green-50)] rounded w-24"
               onClick={() => downloadPrompt(data)}
             >
               Save Tags
             </button>
             <button
-              className="bg-green-600 hover:bg-green-500 rounded w-24 disabled:bg-gray-500"
+              className="bg-[color:var(--green)] hover:bg-[color:var(--green-50)] rounded w-24 disabled:bg-gray-500"
               onClick={() => onReplicate()}
               disabled={isDisabled}
             >
               Replicate
             </button>
             <button
-              className="bg-red-600 hover:bg-red-500 rounded w-24"
+              className="bg-[color:var(--red)] hover:bg-[color:var(--red-50)] rounded w-24"
               onClick={() => onDelete()}
             >
               Delete

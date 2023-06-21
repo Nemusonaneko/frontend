@@ -1,0 +1,24 @@
+/*
+"name": "monokai",
+"desc": "a sandy theme",
+"auth": "Sublime Text 2",
+*/
+
+:root.monokai, .monokai{
+	--bg0:#272822;
+	--bg1:#3e3d32;
+	--bg2:#5A5748;
+	--bg3:#75715e;
+	--text:#f8f8f2;
+	--darktext:#d8d8d2;
+
+	--red:#f92672;
+	--orange:#fd971f;
+	--yellow:#e6db74;
+	--green:#a6e22e;
+	--blue:#66d9ef;
+	--purple:#ae81ff;
+
+  --main:var(--yellow);
+	--text-on-color:var(--bg0);
+}
