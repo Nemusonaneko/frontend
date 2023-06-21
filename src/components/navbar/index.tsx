@@ -41,6 +41,13 @@ export default function NavBar() {
             >
               License
             </Link>
+            <Link
+              href="/privacy"
+              target="_blank"
+              className="text-lg hover:text-gray-300"
+            >
+              Privacy
+            </Link>
             {/* <button className="bg-blue-600 rounded-xl px-2 py-1 text-lg hover:bg-blue-500">
               Connect Wallet
             </button> */}
@@ -84,6 +91,14 @@ export default function NavBar() {
                   target="_blank"
                 >
                   <button className="py-2 w-full">License</button>
+                </Link>
+              </li>
+              <li className="hover:bg-violet-900">
+                <Link
+                  href="/privacy"
+                  target="_blank"
+                >
+                  <button className="py-2 w-full">Privacy</button>
                 </Link>
               </li>
               {/* <li className="hover:bg-blue-700">
