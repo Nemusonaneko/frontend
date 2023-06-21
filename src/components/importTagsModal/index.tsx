@@ -14,10 +14,10 @@ export default function ImportTagsModal({
 }) {
   const { mutate: getTags } = useGetTags();
 
-  const { handleSubmit, reset, register, getValues, setValue } =
+  const { handleSubmit, reset, register, setValue } =
     useForm<TagImportValues>({
       defaultValues: {
-        site: "Gelbooru",
+        site: null,
         url: "",
       },
     });
@@ -75,11 +75,10 @@ export default function ImportTagsModal({
             <select
               className="w-full bg-[#474678] h-8"
               {...register("site")}
-              value={getValues("site")}
               onChange={(x) => setValue("site", x.target.value)}
             >
               <option>Danbooru</option>
-              <option disabled>{`GelBooru (WIP)`}</option>
+              <option>Gelbooru</option>
             </select>
             <p className="text-bold text-sm">Input URL</p>
             <input
@@ -123,11 +122,10 @@ export default function ImportTagsModal({
             <select
               className="w-full bg-[#474678] h-8"
               {...register("site")}
-              value={getValues("site")}
               onChange={(x) => setValue("site", x.target.value)}
             >
               <option>Danbooru</option>
-              <option disabled>{`GelBooru (WIP)`}</option>
+              <option>Gelbooru</option>
             </select>
             <p className="text-bold text-sm">Input URL</p>
             <input

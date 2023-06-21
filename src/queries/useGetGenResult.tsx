@@ -61,10 +61,10 @@ export default function useGetGenResult() {
             count++;
             currentSize = JSON.stringify(currentLocalStorage).length;
           }
+          localStorage.setItem("history", JSON.stringify(currentLocalStorage));
           toast.success(
             `Added image to history after removing the last ${count} images.`
           );
-          localStorage.setItem("history", JSON.stringify(currentLocalStorage));
         } catch (error: any) {
           throw new Error(error.message);
         }
