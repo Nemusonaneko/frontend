@@ -1,0 +1,24 @@
+/*
+"name": "monokai pro",
+"desc": "monokai pro, the sequel to monokai",
+"auth": "Sublime Text 3",
+*/
+
+:root.monokai_pro, .monokai_pro{
+	--bg0:#161821;
+	--bg1:#1e1f2b;
+	--bg2:#232533;
+	--bg3:#282a3a;
+	--text:#EAF2F1;
+	--darktext:#B2B9BD;
+
+	--red:#FF657A;
+	--orange:#FF9B5E;
+	--yellow:#FFD76D;
+	--green:#BAD761;
+	--blue:#9CD1BB;
+	--purple:#C39AC9;
+
+  --main:var(--purple);
+	--text-on-color:var(--bg0);
+}

@@ -1,0 +1,24 @@
+/*
+"name": "solar dark",
+"desc": "a rich blue theme",
+"auth": "ethanschoonover.com/solarized",
+*/
+
+:root.solarised_dark, .solarised_dark{
+	--bg0:#002b36;
+	--bg1:#022F3A;
+	--bg2:#05323E;
+	--bg3:#073642;
+	--text:#657b83;
+	--darktext:#586e75;
+
+	--red:#dc322f;
+	--orange:#cb4b16;
+	--yellow:#b58900;
+	--green:#859900;
+	--blue:#268bd2;
+	--purple:#6c71c4;
+
+  --main:var(--blue);
+	--text-on-color:var(--bg0);
+}

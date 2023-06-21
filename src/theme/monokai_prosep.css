@@ -1,0 +1,24 @@
+/*
+"name": "monokai desert",
+"desc": "a not-so-light version of monokai pro",
+"auth": "Sublime Text 3 + hoax",
+*/
+
+:root.monokai_prosep, .monokai_prosep{
+	--bg0:#191515;
+	--bg1:#211c1c;
+	--bg2:#272121;
+	--bg3:#2c2525;
+	--text:#EAF2F1;
+	--darktext:#B2B9BD;
+
+	--red:#FF657A;
+	--orange:#FF9B5E;
+	--yellow:#FFD76D;
+	--green:#BAD761;
+	--blue:#9CD1BB;
+	--purple:#A8A9EB;
+
+  --main:var(--orange);
+	--text-on-color:var(--bg0);
+}

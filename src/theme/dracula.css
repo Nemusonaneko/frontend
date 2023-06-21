@@ -1,0 +1,23 @@
+/*
+"name": "dracula UI",
+"desc": "an impending grey set of colours",
+"auth": "draculatheme.com",
+*/
+:root.dracula, .dracula{
+	--bg0:#282a36;
+	--bg1:#313442;
+	--bg2:#3B3D4E;
+	--bg3:#44475a;
+	--text:#f8f8f2;
+	--darktext:#e8e8e2;
+
+	--red:#ff5555;
+	--orange:#ffb86c;
+	--yellow:#f1fa8c;
+	--green:#50fa7b;
+	--blue:#89A0E5; /* this is lightened because the default is too dark */
+	--purple:#bd93f9;
+
+  --main:var(--purple);
+	--text-on-color:var(--bg3);
+}

@@ -1,0 +1,24 @@
+/*
+"name": "proton",
+"desc": "a cool, blue theme",
+"auth": "proton.me",
+*/
+
+:root.proton, .proton{
+	--bg0:#1e2130;
+	--bg1:#171926;
+	--bg2:#25283a ;
+	--bg3:#34384e;
+	--text:white;
+	--darktext:#979bb0;
+
+	--red:#e53265;
+	--orange:#FD971F;
+	--yellow:#E6DB74;
+	--green:#A6E22E;
+	--blue:#66D9EF;
+	--purple:#AE81FF;
+
+  --main:var(--blue);
+	--text-on-color:var(--bg0);
+}
