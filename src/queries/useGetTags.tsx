@@ -3,13 +3,31 @@ import { useMutation } from "react-query";
 
 async function getTags(values: TagImportValues) {
   try {
+    if (!values.site) throw new Error("No site");
+    if (!values.url) throw new Error("No URL");
     let result;
     if (values.site === "Danbooru") {
+      let isURI;
+      try {
+        isURI = Boolean(new URL(values.url));
+      } catch (error) {
+        isURI = false;
+      }
+      let id;
+      if (isURI) {
+        id = values.url.split("posts/")[1];
+        const queryIndex = id.indexOf("?");
+        if (queryIndex !== -1) {
+          id = id.slice(0, queryIndex);
+        }
+      } else {
+        id = values.url;
+      }
+
       const response = await fetch(
-        `${values.url}.json`
+        `https://danbooru.donmai.us/posts/${id}.json`
       )
-        .then((x: any) => x.text())
-        .then((x: any) => JSON.parse(x))
+        .then((x: any) => x.json())
         .then((x: any) => x.tag_string);
       result = response.split(" ").join(", ");
     } else {

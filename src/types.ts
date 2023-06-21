@@ -23,7 +23,7 @@ export interface ResultValues {
 }
 
 export interface TagImportValues {
-  site: string;
+  site: string | undefined | null;
   url: string;
 }
 
@@ -36,4 +36,4 @@ export interface GenDataValues {
   denoiseStrength: number;
   model: string;
   seed: any;
-} 
+}
