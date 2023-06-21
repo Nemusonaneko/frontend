@@ -78,7 +78,6 @@ export default function ImportTagsModal({
               onChange={(x) => setValue("site", x.target.value)}
             >
               <option>Danbooru</option>
-              <option>Gelbooru</option>
             </select>
             <p className="text-bold text-sm">Input URL</p>
             <input
@@ -125,7 +124,6 @@ export default function ImportTagsModal({
               onChange={(x) => setValue("site", x.target.value)}
             >
               <option>Danbooru</option>
-              <option>Gelbooru</option>
             </select>
             <p className="text-bold text-sm">Input URL</p>
             <input
