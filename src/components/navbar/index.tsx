@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import cute from "../../../public/cute.gif";
 import React from "react";
-import ThemeSwitcher from "../themeSwitcher/index.tsx"
+import ThemeSwitcher from "../themeSwitcher/index"
 
 export default function NavBar() {
   const [opened, setOpened] = React.useState<boolean>(false);

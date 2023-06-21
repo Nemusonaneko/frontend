@@ -99,19 +99,19 @@ export default function HistoryModal({
           </div>
           <div className="flex gap-1 pt-1 items-center justify-start">
             <button
-              className="w-32 bg-[color:var(--green)] hover:bg-[color:var(--green-50)] rounded p-1"
+              className="w-32 bg-[color:var(--green)] text-[color:var(--text-on-color)] hover:bg-[color:var(--green-50)] rounded p-1"
               onClick={() => downloadImage(data)}
             >
               Save
             </button>
             <button
-              className="w-32 bg-[color:var(--green)] hover:bg-[color:var(--green-50)] rounded p-1"
+              className="w-32 bg-[color:var(--green)] text-[color:var(--text-on-color)] hover:bg-[color:var(--green-50)] rounded p-1"
               onClick={() => downloadPrompt(data)}
             >
               Save Tags
             </button>
             <button
-              className="w-32 bg-[color:var(--green)] hover:bg-[color:var(--green-50)] rounded p-1 disabled:bg-gray-500"
+              className="w-32 bg-[color:var(--green)] text-[color:var(--text-on-color)] hover:bg-[color:var(--green-50)] rounded p-1 disabled:bg-gray-500"
               onClick={() => onReplicate()}
               disabled={isDisabled}
             >
@@ -169,19 +169,19 @@ export default function HistoryModal({
           </div>
           <div className="flex gap-2 justify-center">
             <button
-              className="bg-[color:var(--green)] hover:bg-[color:var(--green-50)] rounded w-24"
+              className="bg-[color:var(--green)] text-[color:var(--text-on-color)] hover:bg-[color:var(--green-50)] rounded w-24"
               onClick={() => downloadImage(data)}
             >
               Save
             </button>
             <button
-              className="bg-[color:var(--green)] hover:bg-[color:var(--green-50)] rounded w-24"
+              className="bg-[color:var(--green)] text-[color:var(--text-on-color)] hover:bg-[color:var(--green-50)] rounded w-24"
               onClick={() => downloadPrompt(data)}
             >
               Save Tags
             </button>
             <button
-              className="bg-[color:var(--green)] hover:bg-[color:var(--green-50)] rounded w-24 disabled:bg-gray-500"
+              className="bg-[color:var(--green)] text-[color:var(--text-on-color)] hover:bg-[color:var(--green-50)] rounded w-24 disabled:bg-gray-500"
               onClick={() => onReplicate()}
               disabled={isDisabled}
             >

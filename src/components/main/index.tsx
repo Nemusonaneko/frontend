@@ -16,7 +16,7 @@ import ImportTagsModal from "@/components/importTagsModal";
 import downloadImage from "@/utils/downloadImage";
 import downloadPrompt from "@/utils/downloadPrompt";
 import toast from "react-hot-toast";
-import "../../theme/_import.tsx";
+import "../../theme/_import";
 
 export default function Main() {
   const [genFetched, setGenFetched] = React.useState<boolean>(false);
@@ -108,10 +108,10 @@ export default function Main() {
     });
   };
 
-	var [isDev, setDev] = React.useState(false);
-	React.useEffect(()=>{
-		setDev( localStorage.getItem('user.dev') )
-	});
+  var [isDev, setDev] = React.useState<boolean>(false);
+  React.useEffect(() => {
+    setDev(Boolean(localStorage.getItem("user.dev")) ?? false);
+  }, []);
 
   return (
     <>
@@ -478,22 +478,52 @@ export default function Main() {
         setValues={setValue}
       />
 
-			{/* this is for creating colourschemes with mui bracketmix */}
-			{isDev?(<>
-				<div className="colourbox flex flex-wrap" style={{width:`${60*11}px`}}>
-					{['red','orange','yellow','green','blue','purple'].map(color=>{
-						return (['-0','-10','-20','-30','-40','','-50','-60','-70','-80','-90']).map((tone,i) => {
-							return (<div key={i} style={{
-								backgroundColor:`var(--${color}${tone})`,
-								color:`var(--text-on-color)`,
-								width:'60px',
-								height:'60px'
-							}} className="cb-item">{color}<br/>{tone}</div>);
-						})
-					})}
-				</div>
-			</>):""}
-
+      {/* this is for creating colourschemes with mui bracketmix */}
+      {isDev ? (
+        <>
+          <div
+            className="colourbox flex flex-wrap"
+            style={{ width: `${60 * 11}px` }}
+          >
+            {["red", "orange", "yellow", "green", "blue", "purple"].map(
+              (color) => {
+                return [
+                  "-0",
+                  "-10",
+                  "-20",
+                  "-30",
+                  "-40",
+                  "",
+                  "-50",
+                  "-60",
+                  "-70",
+                  "-80",
+                  "-90",
+                ].map((tone, i) => {
+                  return (
+                    <div
+                      key={i}
+                      style={{
+                        backgroundColor: `var(--${color}${tone})`,
+                        color: `var(--text-on-color)`,
+                        width: "60px",
+                        height: "60px",
+                      }}
+                      className="cb-item"
+                    >
+                      {color}
+                      <br />
+                      {tone}
+                    </div>
+                  );
+                });
+              }
+            )}
+          </div>
+        </>
+      ) : (
+        ""
+      )}
     </>
   );
 }

@@ -15,10 +15,10 @@ export default function Providers({ children }: { children: any }) {
           reverseOrder
           toastOptions={{
             style: {
-              background: "#474678",
-              color: "#ffffff",
+              background: "var(--bg3)",
+              color: "var(--text)",
             },
-            duration: 3000
+            duration: 3000,
           }}
         />
       </QueryClientProvider>

@@ -2,7 +2,7 @@ import NavBar from "@/components/navbar";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Providers from "@/components/providers";
-import "../theme/_import.tsx";
+import "../theme/_import";
 
 const inter = Inter({ subsets: ["latin"] });
 
