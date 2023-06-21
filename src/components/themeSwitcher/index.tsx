@@ -111,7 +111,7 @@ export default function ThemeSwitcher() {
   var [isOpen, setOpen] = React.useState<boolean>(false);
 
   React.useEffect(function () {
-    console.log("themes", themeList);
+    // console.log("themes", themeList);
 
     if (localStorage.getItem("user.theme.identifier") === null) {
       localStorage.setItem("user.theme.identifier", "original");
