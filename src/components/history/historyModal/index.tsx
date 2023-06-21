@@ -118,7 +118,7 @@ export default function HistoryModal({
               Replicate
             </button>
             <button
-              className="w-32 bg-[color:var(--red)] hover:bg-[color:var(--red-50)] rounded p-1"
+              className="w-32 bg-[color:var(--red)] text-[color:var(--text-on-color)] hover:bg-[color:var(--red-50)] rounded p-1"
               onClick={() => onDelete()}
             >
               Delete
@@ -188,7 +188,7 @@ export default function HistoryModal({
               Replicate
             </button>
             <button
-              className="bg-[color:var(--red)] hover:bg-[color:var(--red-50)] rounded w-24"
+              className="bg-[color:var(--red)] text-[color:var(--text-on-color)] hover:bg-[color:var(--red-50)] rounded w-24"
               onClick={() => onDelete()}
             >
               Delete

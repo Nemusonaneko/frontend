@@ -25,15 +25,30 @@ function setEvent(e: any) {
 
 function Icon(props: any) {
   return (
+    // <svg
+    //   className="themeActivator text-[color:var(--bg3)] hover:text-[color:var(--text)]"
+    //   {...props}
+    //   width="24px"
+    //   fill="currentColor"
+    //   viewBox="0 0 32 32"
+    //   version="1.1"
+    // >
+    //   <path d="M20 8h-4v-4h4v4zM28 16v-4h-4v4h4zM28 24v-4h-4v4h4zM8 4v4h4v-4h-4zM20 16h4v4h-4v8h-16v-16h8v-4h4v4h4v4zM16 16h-8v8h8v-8zM28 4h-4v4h4v-4zM20 8v4h4v-4h-4z"></path>
+    // </svg>
     <svg
-      className="themeActivator text-[color:var(--bg3)] hover:text-[color:var(--text)]"
+      xmlns="http://www.w3.org/2000/svg"
       {...props}
-      width="24px"
       fill="currentColor"
-      viewBox="0 0 32 32"
-      version="1.1"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+      className="w-8 h-8 text-[color:var(--text)] hover:text-[color:var(--bg3)]"
     >
-      <path d="M20 8h-4v-4h4v4zM28 16v-4h-4v4h4zM28 24v-4h-4v4h4zM8 4v4h4v-4h-4zM20 16h4v4h-4v8h-16v-16h8v-4h4v4h4v4zM16 16h-8v8h8v-8zM28 4h-4v4h4v-4zM20 8v4h4v-4h-4z"></path>
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+      />
     </svg>
   );
 }
@@ -74,7 +89,11 @@ function ThemeCard({ theme }: { theme: any }) {
   );
 }
 
-function ThemeCards({ setOpen }: { setOpen: any }) {
+function ThemeCards({
+  setOpen,
+}: {
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
   return (
     <div
       id="ThemeCards"
@@ -109,13 +128,13 @@ export default function ThemeSwitcher() {
     <>
       <Icon
         onClick={() => {
-          setOpen((o) => !o);
+          setOpen(true);
         }}
       />
       <div
         id={`theme_switcher_${isOpen ? "open" : "closed"}`}
         style={isOpen ? {} : { top: "-100vh" }}
-        className="fixed left-1/2"
+        className={"fixed left-1/2"}
       >
         <ThemeCards setOpen={setOpen} />
       </div>
