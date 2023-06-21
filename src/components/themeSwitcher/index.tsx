@@ -27,14 +27,14 @@ function Icon(props){
 function ThemeCard({theme}){
 	return(<>
 		<div
-			className={theme.identifier + " themeCard flex flex-col text-center pt-5 bg-[color:var(--bg0)] outline-8"}
+			className={theme.identifier + " themeCard flex flex-col text-center bg-[color:var(--bg0)] outline-8"}
 			title={theme.desc}
 			onClick={ ()=>setEvent(theme.identifier) }
 		>
 
 			<p className="text-[color:var(--text)]">{theme.name}</p>
 
-			<div className="h-2/4 flex flex-col justify-center align-center mt-5">
+			<div className="themeCardColours-fr h-2/4 flex flex-col justify-center align-center mt-5">
 				<div className="inline-flex flex-row mx-auto">
 		      <span className="block bg-[color:var(--bg0)]"></span>
 		      <span className="block bg-[color:var(--bg1)]"></span>
@@ -43,7 +43,7 @@ function ThemeCard({theme}){
 		      <span className="block bg-[color:var(--text)]"></span>
 		      <span className="block bg-[color:var(--darktext)]"></span>
 				</div>
-				<div className="inline-flex flex-row mx-auto">
+				<div className="themeCardColours-lr inline-flex flex-row mx-auto">
 		      <span className="block bg-[color:var(--red)]"></span>
 		      <span className="block bg-[color:var(--orange)]"></span>
 		      <span className="block bg-[color:var(--yellow)]"></span>
