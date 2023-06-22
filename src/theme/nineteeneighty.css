@@ -1,0 +1,24 @@
+/*
+"name": "1980",
+"desc": "a retro set of colours",
+"author": "hoax",
+*/
+
+:root.nineteeneighty, .nineteeneighty{
+	--bg0:#262335;
+	--bg1:#171520;
+	--bg2:var(--bg1);
+	--bg3:#2C293D;
+	--text:#d4d4d4;
+	--darktext:#d4d4d4;
+
+	--red:#fe4450;
+	--orange:#ff8b39;
+	--yellow:#FEDE5D;
+	--green:#36f9f6;
+	--blue:#848bbd;
+	--purple:#ff7edb;
+
+	--main:var(--yellow);
+	--text-on-color:var(--bg1);
+}

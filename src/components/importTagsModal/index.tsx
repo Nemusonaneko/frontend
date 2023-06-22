@@ -40,7 +40,7 @@ export default function ImportTagsModal({
   if (!opened) return null;
   return (
     <div
-      className="fixed inset-0 bg-[#00264F] backdrop-blur-sm bg-opacity-75 flex justify-center items-center"
+      className="fixed inset-0 bg-transparent backdrop-blur-sm bg-opacity-75 flex justify-center items-center"
       onClick={() => setOpened(false)}
     >
       <form
@@ -48,11 +48,11 @@ export default function ImportTagsModal({
         className="w-full flex justify-center max-w-md"
       >
         <div
-          className="max-lg:hidden h-fit w-full bg-[#002C5C] rounded-md relative"
+          className="max-lg:hidden h-fit w-full bg-[color:var(--bg0)] rounded-md relative"
           onClick={(e) => e.stopPropagation()}
         >
           <button
-            className="text-xl absolute top-1 right-1 hover:bg-[#00264F] rounded-md"
+            className="text-xl absolute top-1 right-1 hover:bg-[color:var(--bg1)] rounded-md"
             onClick={() => setOpened(false)}
           >
             <svg
@@ -73,7 +73,7 @@ export default function ImportTagsModal({
           <div className="p-2 w-full flex flex-col gap-2">
             <p className="text-bold text-sm">Select Site</p>
             <select
-              className="w-full bg-[#474678] h-8"
+              className="w-full bg-[color:var(--bg3)] h-8"
               {...register("site")}
               onChange={(x) => setValue("site", x.target.value)}
             >
@@ -81,12 +81,12 @@ export default function ImportTagsModal({
             </select>
             <p className="text-bold text-sm">Input URL or ID</p>
             <input
-              className="w-full bg-[#474678] h-8 pl-1 text-sm"
+              className="w-full bg-[color:var(--bg3)] h-8 pl-1 text-sm"
               {...register("url")}
               onChange={(x) => setValue("url", x.target.value)}
             />
             <button
-              className="w-full bg-green-600 hover:bg-green-500 rounded py-1 px-1 text-bold text-md"
+              className="w-full bg-[color:var(--green)] hover:bg-[color:var(--green-50)] rounded py-1 px-1 text-bold text-md"
               type="submit"
             >
               Import
@@ -94,11 +94,11 @@ export default function ImportTagsModal({
           </div>
         </div>
         <div
-          className="lg:hidden w-3/4 bg-[#002C5C] rounded-md relative"
+          className="lg:hidden w-3/4 bg-[color:var(--bg0)] rounded-md relative"
           onClick={(e) => e.stopPropagation()}
         >
           <button
-            className="text-xl w-fit absolute top-1 right-1 hover:bg-[#474678] rounded-md"
+            className="text-xl w-fit absolute top-1 right-1 hover:bg-[color:var(--bg0)] rounded-md"
             onClick={() => setOpened(false)}
           >
             <svg
@@ -119,7 +119,7 @@ export default function ImportTagsModal({
           <div className="p-2 w-full flex flex-col gap-2">
             <p className="text-bold text-sm">Select Site</p>
             <select
-              className="w-full bg-[#474678] h-8"
+              className="w-full bg-[color:var(--bg3)] h-8"
               {...register("site")}
               onChange={(x) => setValue("site", x.target.value)}
             >
@@ -127,12 +127,12 @@ export default function ImportTagsModal({
             </select>
             <p className="text-bold text-sm">Input URL or ID</p>
             <input
-              className="w-full bg-[#474678] h-8 pl-1 text-sm"
+              className="w-full bg-[color:var(--bg3)] h-8 pl-1 text-sm"
               {...register("url")}
               onChange={(x) => setValue("url", x.target.value)}
             />
             <button
-              className="w-full bg-green-600 hover:bg-green-500 rounded py-1 px-1 text-bold text-md"
+              className="w-full bg-[color:var(--green)] hover:bg-[color:var(--green-50)] rounded py-1 px-1 text-bold text-md"
               type="submit"
             >
               Import

@@ -1,0 +1,24 @@
+/*
+"name": "solar light",
+"desc": "a pale theme",
+"auth": "ethanschoonover.com/solarized",
+*/
+
+:root.solarised_light, .solarised_light{
+	--bg3:#ccc6b3;
+	--bg2:#ddd7c4;
+	--bg1:#eee8d5;
+	--bg0:#fdf6e3;
+	--text:#002b36;
+	--darktext:#073642;
+
+	--red:#dc322f;
+	--orange:#cb4b16;
+	--yellow:#b58900;
+	--green:#859900;
+	--blue:#268bd2;
+	--purple:#6c71c4;
+
+  --main:var(--blue);
+	--text-on-color:var(--bg2);
+}

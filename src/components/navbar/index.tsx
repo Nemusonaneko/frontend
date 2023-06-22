@@ -4,21 +4,26 @@ import Link from "next/link";
 import Image from "next/image";
 import cute from "../../../public/cute.gif";
 import React from "react";
+import ThemeSwitcher from "../themeSwitcher/index";
 
 export default function NavBar() {
   const [opened, setOpened] = React.useState<boolean>(false);
 
   return (
     <>
-      <nav className="bg-[#001933] border-gray-500">
+      <nav className="bg-[color:var(--bg1)] border-gray-500">
         <div className="w-full flex items-center gap-2 mx-auto justify-between px-2 py-1">
-          <Link
-            href="/"
-            className="flex items-center gap-2 hover:text-gray-300"
-          >
-            <Image src={cute} height={48} width={48} alt="cute.gif" />
-            <p className="text-xl font-bold">{"Nemu's Waifu Generator"}</p>
-          </Link>
+          <div className="flex gap-2 items-center">
+            <Link
+              href="/"
+              className="flex items-center gap-2 hover:text-gray-300"
+            >
+              <Image src={cute} height={48} width={48} alt="cute.gif" />
+              <p className="text-xl font-bold">{"Nemu's Waifu Generator"}</p>
+            </Link>
+            <ThemeSwitcher />
+          </div>
+
           <div className="flex items-center gap-2 sm:visible max-sm:hidden px-2">
             <Link
               href="https://twitter.com/waifugeneth"
@@ -41,11 +46,7 @@ export default function NavBar() {
             >
               License
             </Link>
-            <Link
-              href="/privacy"
-              target="_blank"
-              className="text-lg hover:text-gray-300"
-            >
+            <Link href="/privacy" className="text-lg hover:text-gray-300">
               Privacy
             </Link>
             {/* <button className="bg-blue-600 rounded-xl px-2 py-1 text-lg hover:bg-blue-500">
@@ -94,10 +95,7 @@ export default function NavBar() {
                 </Link>
               </li>
               <li className="hover:bg-violet-900">
-                <Link
-                  href="/privacy"
-                  target="_blank"
-                >
+                <Link href="/privacy">
                   <button className="py-2 w-full">Privacy</button>
                 </Link>
               </li>

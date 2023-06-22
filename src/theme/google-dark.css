@@ -1,0 +1,25 @@
+/*
+"name": "mUI dark",
+"desc": "the dark colours of alphabet corporation",
+"auth": "Google",
+*/
+
+/* https://m3.material.io/styles/color/overview REFERENCE THIS!!! */
+:root.google-dark, .google-dark{
+	--bg0:#191C1C;
+	--bg1:#181B1B;
+	--bg2:#1F2222;
+	--bg3:#262929;
+	--text:#E0E3E1;
+	--darktext:#CCCECD;
+
+	--red:#6A2028;
+	--orange:#6A3920;
+	--yellow:#6A5720;
+	--green:#386A20;
+	--blue:#206A67;
+	--purple:#460751;
+
+	--main:var(--blue);
+	--text-on-color:var(--text);
+}

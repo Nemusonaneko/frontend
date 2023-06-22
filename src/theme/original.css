@@ -1,0 +1,23 @@
+/*
+"name": "nemusona UI",
+"desc": "a deep-blue set of colours",
+"auth": "nemu",
+*/
+:root.original, .original{
+	--bg0:#001021;
+	--bg1:#001933;
+	--bg2:#00264F;
+	--bg3:#002C5B;
+	--text:#ffffff;
+	--darktext:#dddddd;
+
+	--red:#DC2626;
+	--orange:#ffb86c;
+	--yellow:#f1fa8c;
+	--green:#16A34A;
+	--blue:#00264F;
+	--purple:#bd93f9;
+
+  --main:var(--purple);
+	--text-on-color:#ffffff;
+}
