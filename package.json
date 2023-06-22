@@ -4,9 +4,15 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev-ssl": "concurrently --kill-others -n \"next,cors,ssl-p,cors-p\" \"next dev\"  \"npm:cors-forwarder\" \"npm:ssl-proxy\" \"npm:cors-proxy\" ",
+		"ssl-proxy":"local-ssl-proxy --key ./keys/localhost-key.pem --cert ./keys/localhost.pem --source 3001 --target 3000",
+		"cors-proxy":"local-ssl-proxy --key ./keys/localhost-key.pem --cert ./keys/localhost.pem --source 3003 --target 3002",
+		"cors-forwarder":"npx lcp --proxyUrl https://waifus-api.nemusona.com/ --port 3002 --proxyPartial /",
+
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "setup-ssl": "mkcert -install && mkdir keys && mkcert -cert-file ./keys/localhost.pem -key-file ./keys/localhost-key.pem localhost"
   },
   "dependencies": {
     "@types/node": "20.3.0",
@@ -24,5 +30,10 @@
     "react-query": "^3.39.3",
     "tailwindcss": "3.3.2",
     "typescript": "5.1.3"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "local-cors-proxy": "^1.1.0",
+    "local-ssl-proxy": "^2.0.5"
   }
 }
