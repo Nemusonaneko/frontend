@@ -2,13 +2,14 @@ import { HistoryValues, ResultValues } from "@/types";
 import translateModel from "@/utils/translateModel";
 import { useMutation } from "react-query";
 import toast from "react-hot-toast";
+import { apiURL } from "./getApiBase";
 
 async function getGenResult(values: ResultValues) {
   try {
     if (!values.form.model) throw new Error("No model");
     if (!values.jobId) throw new Error("No Job ID");
     const res: Response = await fetch(
-      `https://waifus-api.nemusona.com/job/result/${translateModel(
+      `${apiURL}/job/result/${translateModel(
         values.form.model
       )}/${values.jobId}`
     );

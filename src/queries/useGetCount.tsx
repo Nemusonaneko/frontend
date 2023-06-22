@@ -1,8 +1,9 @@
 import { useQuery } from "react-query";
+import { apiURL } from "./getApiBase";
 
 async function getCount() {
   try {
-    const res = await fetch(`https://waifus-api.nemusona.com/job/count`);
+    const res = await fetch(`${apiURL}/job/count`);
     if (res.status === 200) {
       const result = await res.text();
       return JSON.parse(result);
