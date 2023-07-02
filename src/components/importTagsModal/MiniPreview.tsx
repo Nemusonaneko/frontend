@@ -18,6 +18,7 @@ export default function MiniPreview({src, info}){
 	return (
 		<div className="flex flex-row md:flex-col">
 			<div className="relative">
+				{/* eslint-ignore @next/next/no-img-element */}
 				<img
 					src={decodedImage}
 					alt="waifu"
