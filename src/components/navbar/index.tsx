@@ -4,7 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 import cute from "../../../public/cute.gif";
 import React from "react";
+
 import ThemeSwitcher from "../themeSwitcher/index";
+import MediaList from "./MediaList.tsx"
 
 export default function NavBar() {
   const [opened, setOpened] = React.useState<boolean>(false);
@@ -24,35 +26,8 @@ export default function NavBar() {
             <ThemeSwitcher />
           </div>
 
-          <div className="flex items-center gap-2 sm:visible max-sm:hidden px-2">
-            <Link
-              href="https://twitter.com/waifugeneth"
-              target="_blank"
-              className="text-lg hover:text-gray-300"
-            >
-              <p>Twitter</p>
-            </Link>
-            <Link
-              href="https://discord.gg/nbEN88q6dw"
-              target="_blank"
-              className="text-lg hover:text-gray-300"
-            >
-              <p>Discord</p>
-            </Link>
-            <Link
-              href="https://huggingface.co/spaces/CompVis/stable-diffusion-license"
-              target="_blank"
-              className="text-lg hover:text-gray-300"
-            >
-              License
-            </Link>
-            <Link href="/privacy" className="text-lg hover:text-gray-300">
-              Privacy
-            </Link>
-            {/* <button className="bg-blue-600 rounded-xl px-2 py-1 text-lg hover:bg-blue-500">
-              Connect Wallet
-            </button> */}
-          </div>
+					<MediaList />
+
           <button
             className="max-sm:visible sm:hidden hover:bg-purple-600 hover:rounded-lg"
             onClick={() => setOpened(!opened)}

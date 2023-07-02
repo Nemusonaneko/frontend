@@ -1,6 +1,7 @@
 import { useMutation } from "react-query";
 import { FormValues } from "../types";
 import translateModel from "@/utils/translateModel";
+import { apiURL } from "./getApiBase";
 
 async function submitPrompt(data: FormValues) {
   try {
@@ -13,7 +14,7 @@ async function submitPrompt(data: FormValues) {
       seed: data.seed,
     });
     const res: Response = await fetch(
-      `https://waifus-api.nemusona.com/job/submit/${translateModel(
+      `${apiURL}/job/submit/${translateModel(
         data.model
       )}`,
       {

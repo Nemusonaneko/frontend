@@ -1,6 +1,5 @@
 import { FormValues, HistoryValues } from "@/types";
 import downloadImage from "@/utils/downloadImage";
-import downloadPrompt from "@/utils/downloadPrompt";
 import Image from "next/image";
 import React from "react";
 import { UseFormSetValue } from "react-hook-form";
@@ -60,7 +59,7 @@ export default function HistoryModal({
         onClick={(e) => e.stopPropagation()}
       >
         <button
-          className="text-xl absolute top-1 right-1 hover:bg-[color:var(--bg0)] rounded-md"
+          className="text-xl absolute top-1 right-1 hover:bg-[color:var(--red)] rounded-md"
           onClick={() => setOpened(false)}
         >
           <svg
@@ -97,25 +96,19 @@ export default function HistoryModal({
               <p>{`Model: ${data.model}`}</p>
             </div>
           </div>
-          <div className="flex gap-1 pt-1 items-center justify-start">
+          <div className="flex gap-1 pt-1 items-center justify-end">
             <button
               className="w-32 bg-[color:var(--green)] text-[color:var(--text-on-color)] hover:bg-[color:var(--green-50)] rounded p-1"
               onClick={() => downloadImage(data)}
             >
-              Save
+              Save Image
             </button>
             <button
-              className="w-32 bg-[color:var(--green)] text-[color:var(--text-on-color)] hover:bg-[color:var(--green-50)] rounded p-1"
-              onClick={() => downloadPrompt(data)}
-            >
-              Save Tags
-            </button>
-            <button
-              className="w-32 bg-[color:var(--green)] text-[color:var(--text-on-color)] hover:bg-[color:var(--green-50)] rounded p-1 disabled:bg-gray-500"
+              className="w-32 bg-[color:var(--green)] text-[color:var(--text-on-color)] hover:bg-[color:var(--green-50)] rounded p-1 disabled:opacity-30"
               onClick={() => onReplicate()}
               disabled={isDisabled}
             >
-              Replicate
+              Apply&nbsp;Settings
             </button>
             <button
               className="w-32 bg-[color:var(--red)] text-[color:var(--text-on-color)] hover:bg-[color:var(--red-50)] rounded p-1"
@@ -127,11 +120,11 @@ export default function HistoryModal({
         </div>
       </div>
       <div
-        className=" lg:hidden w-4/5 h-fit bg-[#00264F] rounded-md relative"
+        className=" lg:hidden w-4/5 h-fit bg-[color:var(--bg0)] rounded-md relative"
         onClick={(e) => e.stopPropagation()}
       >
         <button
-          className="text-xl absolute top-1 right-1 hover:bg-[#474678] rounded-md"
+          className="text-xl absolute top-1 right-1 hover:bg-[color:var(--red)] rounded-md"
           onClick={() => setOpened(false)}
         >
           <svg
@@ -167,28 +160,24 @@ export default function HistoryModal({
             <p>{`Seed: ${data.seed}`}</p>
             <p>{`Model: ${data.model}`}</p>
           </div>
-          <div className="flex gap-2 justify-center">
+          <div className="flex gap-2 justify-center flex-col md:flex-row">
+						<div className="space-x-2 flex ">
+							<button
+								className="bg-[color:var(--green)] text-[color:var(--text-on-color)] hover:bg-[color:var(--green-50)] rounded grow px-5 lg:py-2 py-3"
+								onClick={() => downloadImage(data)}
+							>
+								Save
+							</button>
+							<button
+								className="bg-[color:var(--green)] text-[color:var(--text-on-color)] hover:bg-[color:var(--green-50)] rounded grow px-5 lg:py-2 py-3"
+								onClick={() => onReplicate()}
+								disabled={isDisabled}
+							>
+								Apply&nbsp;Settings
+							</button>
+						</div>
             <button
-              className="bg-[color:var(--green)] text-[color:var(--text-on-color)] hover:bg-[color:var(--green-50)] rounded w-24"
-              onClick={() => downloadImage(data)}
-            >
-              Save
-            </button>
-            <button
-              className="bg-[color:var(--green)] text-[color:var(--text-on-color)] hover:bg-[color:var(--green-50)] rounded w-24"
-              onClick={() => downloadPrompt(data)}
-            >
-              Save Tags
-            </button>
-            <button
-              className="bg-[color:var(--green)] text-[color:var(--text-on-color)] hover:bg-[color:var(--green-50)] rounded w-24 disabled:bg-gray-500"
-              onClick={() => onReplicate()}
-              disabled={isDisabled}
-            >
-              Replicate
-            </button>
-            <button
-              className="bg-[color:var(--red)] text-[color:var(--text-on-color)] hover:bg-[color:var(--red-50)] rounded w-24"
+              className="bg-[color:var(--red)] text-[color:var(--text-on-color)] hover:bg-[color:var(--red-50)] rounded min-w-[6rem] px-5"
               onClick={() => onDelete()}
             >
               Delete

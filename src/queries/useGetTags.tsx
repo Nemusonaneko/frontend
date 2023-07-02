@@ -1,6 +1,53 @@
 import { TagImportValues } from "@/types";
 import { useMutation } from "react-query";
 
+const before_queryRegex = /(.*?)\?/;
+const after_postsRegex = /(?<=posts\/).*/;
+
+function formatTagSet(set, emph=0){
+	return set
+		.split(' ')
+		.map( s => `${"(".repeat(emph)}${s}${")".repeat(emph)}` )
+		.join(', ')
+}
+
+async function getTags({type, url}) {
+
+	if(!type || !url){ throw new Error('Invalid URL Type'); }
+	if(
+		type != "danbooru_full_query" &&
+		type != "danbooru_full" &&
+		type != "danbooru_id"
+	){ throw new Error(`Unknown URL Type ${type}`) }
+
+	try{
+		switch(type){
+			case "danbooru_full_query":
+				url = before_queryRegex.exec(url)[1];
+
+			case "danbooru_full":
+				url = after_postsRegex.exec(url)[0];
+
+			case "danbooru_id":
+				url = parseInt( url );
+
+			break;
+		}
+
+		var response = await fetch( `https://danbooru.donmai.us/posts/${url}.json`)
+				.then((d) => d.json());
+
+		return formatTagSet(response.tag_string_character, 1) + ",\n" +
+			formatTagSet(response.tag_string_general) + ",\n" +
+			formatTagSet(response.tag_string_artist)
+		;
+
+	}catch(e){
+		throw e;
+	}
+}
+
+/*
 async function getTags(values: TagImportValues) {
   try {
     if (!values.site) throw new Error("No site");
@@ -37,8 +84,9 @@ async function getTags(values: TagImportValues) {
   } catch (error: any) {
     throw new Error(error.message);
   }
-}
+
+*/
 
 export default function useGetTags() {
-  return useMutation((values: TagImportValues) => getTags(values));
+  return useMutation((values) => getTags(values));
 }

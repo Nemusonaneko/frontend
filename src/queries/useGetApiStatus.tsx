@@ -1,9 +1,10 @@
 import { useQuery } from "react-query";
 import toast from "react-hot-toast";
+import { apiURL } from "./getApiBase";
 
 async function getApiStatus() {
   try {
-    const res: Response = await fetch(`https://waifus-api.nemusona.com/`);
+    const res: Response = await fetch(`${apiURL}`);
     if (res.status !== 200) throw new Error(`Failed to check API status`);
     return true;
   } catch (error: any) {

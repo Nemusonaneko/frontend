@@ -1,0 +1,15 @@
+.linkPreview{
+	opacity:0;
+	transition: opacity .1s ease-in-out;
+}
+.linkPreviewBounds:hover > .linkPreview{
+	opacity:1;
+}
+.icon-svg svg {
+	filter: drop-shadow(3px 3px 0px var(--bg2));
+}
+
+.icon-svg:hover {color:var(--darktext);}
+
+.svg-Twitter:hover{ color:var(--blue) !important; }
+.svg-Discord:hover{ color:var(--purple) !important; }

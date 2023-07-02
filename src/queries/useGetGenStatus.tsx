@@ -1,5 +1,6 @@
 import translateModel from "@/utils/translateModel";
 import { useQuery } from "react-query";
+import { apiURL } from "./getApiBase";
 
 async function getGenStatus(
   model: string | null | undefined,
@@ -9,7 +10,7 @@ async function getGenStatus(
     if (!model) return null;
     if (!jobId) return null;
     const res = await fetch(
-      `https://waifus-api.nemusona.com/job/status/${translateModel(
+      `${apiURL}/job/status/${translateModel(
         model
       )}/${jobId}`
     );

@@ -6,12 +6,14 @@ import "../theme/_import";
 
 const inter = Inter({ subsets: ["latin"] });
 
+var isDev = process.env.NODE_ENV == "development";
+
 export const metadata = {
-  title: "Nemu's Waifu Gen",
+  title: isDev?"Development NWG :3":"Nemu's Waifu Gen",
   description: "UwU",
   icons: {
-    icon: "/favicon.ico",
-  },
+    icon: "/favicon.ico"
+  }
 };
 
 export default function RootLayout({
@@ -29,6 +31,7 @@ export default function RootLayout({
   */
   return (
     <html lang="en" className="original">
+
       <body className={`${inter.className} bg-[color:var(--bg0)] text-[color:var(--text)]`}>
         <Providers>
           <NavBar />
