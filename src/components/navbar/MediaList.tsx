@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 import "./navbar.css";
+import DeveloperCtx from "@/components/providers/DeveloperCtx";
 
 function twitterSVG({style, className=""}){
 	return (
@@ -48,10 +49,19 @@ function statsSVG({style, className=""}){
 		</div>
 	)
 }
+function DevSVG({style, className=""}){
+	return (
+		<div style={style} className={"icon-svg "+className}>
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+				<path fill="currentColor" d="m30 16-8.5 8.5-2.8-2.8 5.6-5.7-5.6-5.7 2.8-2.8L30 16zM2 16l8.5-8.5 2.8 2.8L7.7 16l5.6 5.7-2.8 2.8L2 16z"/>
+			</svg>
+		</div>
+	);
+}
 
 const svgSize="22px";
 
-function LinkIcon({setLinkPreview, colour, src, text, IconE}){
+function LinkIcon({setLinkPreview, colour, src, text, IconE, idt=false}){
 	return (
 		<Link
 			href={src}
@@ -66,6 +76,8 @@ function LinkIcon({setLinkPreview, colour, src, text, IconE}){
 
 export default function MediaList(){
 	var [linkPreview, setLinkPreview] = React.useState<string>('');
+	var {dev, setDev} = React.useContext(DeveloperCtx);
+
 	return (
 		<div className="linkPreviewBounds flex items-center gap-2 sm:visible max-sm:hidden px-2">
 			<p className="linkPreview">{linkPreview}&nbsp;</p>
@@ -73,9 +85,17 @@ export default function MediaList(){
 			<LinkIcon colour="#7289DA" text="Discord" IconE={discordSVG} src="https://discord.gg/nbEN88q6dw" setLinkPreview={setLinkPreview} />
 			<LinkIcon colour="" text="Licence" IconE={licenceSVG} src="https://huggingface.co/spaces/CompVis/stable-diffusion-license" setLinkPreview={setLinkPreview} />
 			<LinkIcon colour="" text="Privacy" IconE={privacySVG} src="/privacy" setLinkPreview={setLinkPreview} />
-
 			{/*<LinkIcon colour="" text="Statistics" IconE={statsSVG} src="/stats" setLinkPreview={setLinkPreview} />*/}
 			{/*<LinkIcon text="Wallet" IconE={} src="" />*/}
+			{process.env.NODE_ENV === "development"?
+				<span
+					className="navIco text-lg hover:text-[color:var(--textdark)] flex flex-row items-center"
+					onMouseEnter={() => setLinkPreview("Developer")}
+					onClick={()=>{setDev(!dev);}}
+				>
+					<DevSVG className={`linkIco svg-Dev ${dev?"rainbowText":""}`} style={{color:dev?"":"var(--text)",width:svgSize, height:svgSize}}/>
+				</span>
+			:""}
 		</div>
 	);
 }

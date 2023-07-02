@@ -1,0 +1,4 @@
+{
+	"debug.javascript.automaticallyTunnelRemoteServer": false,
+	"eslint.enable": false
+}

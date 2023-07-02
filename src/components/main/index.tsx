@@ -1,22 +1,30 @@
 "use client";
-import Image from "next/image";
-import dogo from "../../../public/DogO.png";
-import { useForm } from "react-hook-form";
-import History from "@/components/history";
-import { FormValues } from "@/types";
-import useGetCount from "@/queries/useGetCount";
 import React from "react";
+import Image from "next/image";
+import { useForm } from "react-hook-form";
+import { useQueryClient } from "react-query";
+import toast from "react-hot-toast";
+
+import { FormValues } from "@/types";
+
+import dogo from "../../../public/DogO.png";
+import "../../theme/_import";
+
+import History from "@/components/history";
+import ImportTagsModal from "@/components/importTagsModal";
+
+import useGetCount from "@/queries/useGetCount";
 import useGetGenQueue from "@/queries/useGetGenQueue";
 import useGetGenStatus from "@/queries/useGetGenStatus";
 import useGetGenResult from "@/queries/useGetGenResult";
 import useSubmitPrompt from "@/queries/useSubmitPrompt";
-import { useQueryClient } from "react-query";
+
 import translateStatus from "@/utils/translateStatus";
-import ImportTagsModal from "@/components/importTagsModal";
 import downloadImage from "@/utils/downloadImage";
 import downloadPrompt from "@/utils/downloadPrompt";
-import toast from "react-hot-toast";
-import "../../theme/_import";
+
+import DeveloperCtx from "@/components/providers/DeveloperCtx";
+import useLocal from "@/utils/useStorage.ts";
 
 export default function Main() {
   const [genFetched, setGenFetched] = React.useState<boolean>(false);
@@ -108,10 +116,8 @@ export default function Main() {
     });
   };
 
-  var [isDev, setDev] = React.useState<boolean>(false);
-  React.useEffect(() => {
-    setDev(Boolean(localStorage.getItem("user.dev")) ?? false);
-  }, []);
+	var {dev, setDev} = React.useContext(DeveloperCtx);
+	var [showPalette, setShowPalette] = useLocal('user.dev.palette', true);
 
   return (
     <>
@@ -479,8 +485,10 @@ export default function Main() {
       />
 
       {/* this is for creating colourschemes with mui bracketmix */}
-      {isDev ? (
+			
+      {dev && showPalette=="true"? (
         <>
+					<p onClick={()=>setShowPalette(!showPalette)}>{showPalette?"X":">"}</p>
           <div
             className="colourbox flex flex-wrap"
             style={{ width: `${60 * 11}px` }}
