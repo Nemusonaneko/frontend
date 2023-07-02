@@ -23,7 +23,7 @@ export default function Privacy() {
 		});
 		setDataHistory(dataHistory);
 
-	},[waifuCount]);
+	},[waifuCount, dataHistory]);
 
 	const width=400;
 	const height=300;
@@ -42,7 +42,7 @@ export default function Privacy() {
 			.append('g')
 			.call(xAxisGenerator);
 
-	},[svgRef, dataHistory]);
+	},[svgRef, dataHistory, start]);
 
 	return (<div>
 		<h1 className="font-bold text-3xl">Statistics</h1>

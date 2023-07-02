@@ -1,5 +1,6 @@
 import React from "react";
 import translateModel from "@/utils/translateModel";
+import Image from "next/image";
 
 export default function MiniPreview({src, info}){
 	var [decodedImage, setDecodedImage] = React.useState('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=')
@@ -10,14 +11,14 @@ export default function MiniPreview({src, info}){
 			setDecodedImage(e.target.result);
 		}
 		reader.readAsDataURL(src);
-	},[]);
+	},[src]);
 
 	console.log(info);
 
 	return (
 		<div className="flex flex-row md:flex-col">
 			<div className="relative">
-				<img
+				<Image
 					src={decodedImage}
 					alt="waifu"
 					className="grow aspect-square w-full h-full hidden md:block rounded-t-lg"
