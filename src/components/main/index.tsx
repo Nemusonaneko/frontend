@@ -138,7 +138,7 @@ export default function Main() {
                   <p className="text-sm">Positive Prompts</p>
                   <textarea
                     {...register("positivePrompts")}
-                    className="bg-[color:var(--bg2)] w-full p-1 resize-none h-36"
+                    className="rounded-sm focus:outline focus:outline-2 outline-[color:var(--blue)] bg-[color:var(--bg2)] w-full p-1 resize-none h-36"
                     onChange={(x) =>
                       setValue("positivePrompts", x.target.value)
                     }
@@ -149,7 +149,7 @@ export default function Main() {
                   <p className="text-sm">Negative Prompts</p>
                   <textarea
                     {...register("negativePrompts")}
-                    className="bg-[color:var(--bg2)] w-full p-1 resize-none h-36"
+                    className="rounded-sm focus:outline focus:outline-2 outline-[color:var(--blue)] bg-[color:var(--bg2)] w-full p-1 resize-none h-36"
                     onChange={(x) =>
                       setValue("negativePrompts", x.target.value)
                     }
@@ -273,14 +273,14 @@ export default function Main() {
                     >
                       Save
                     </button>
-                    <button
+                    {/*<button
                       type="button"
                       className="font-bold py-1 text-[color:var(--text-on-color)] bg-[color:var(--green)] hover:bg-[color:var(--green-50)] rounded-lg px-1 text-sm disabled:opacity-30"
                       disabled={disableInput || !genData}
                       onClick={() => downloadPrompt(genData!)}
                     >
                       Save Tags
-                    </button>
+                    </button>*/}
                     <button
                       type="button"
                       className="font-bold py-1 text-[color:var(--text-on-color)] bg-[color:var(--green)] hover:bg-[color:var(--green-50)] rounded-lg px-1 text-sm disabled:opacity-30"
@@ -331,14 +331,14 @@ export default function Main() {
                 >
                   Save
                 </button>
-                <button
+                {/*<button
                   type="button"
                   className="font-bold text-[color:var(--text-on-color)] bg-[color:var(--green)] hover:bg-[color:var(--green-50)] rounded-lg px-2 text-sm disabled:opacity-30"
                   disabled={disableInput || !genData}
                   onClick={() => downloadPrompt(genData!)}
                 >
                   Save Tags
-                </button>
+                </button>*/}
                 <button
                   type="button"
                   className="font-bold text-[color:var(--text-on-color)] py-1 bg-[color:var(--green)] hover:bg-[color:var(--green-50)] rounded-lg px-2 text-sm disabled:opacity-30"
