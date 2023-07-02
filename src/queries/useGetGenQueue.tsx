@@ -1,11 +1,12 @@
 import translateModel from "@/utils/translateModel";
 import { useQuery } from "react-query";
+import { apiURL } from "./getApiBase";
 
 async function getGenQueue(model: string | null | undefined) {
   try {
     if (!model) return;
     const res: Response = await fetch(
-      `https://waifus-api.nemusona.com/job/queue/${translateModel(model)}`
+      `${apiURL}/job/queue/${translateModel(model)}`
     );
     if (res.status !== 200) throw new Error(`Failed to get queue for ${model}`);
     return await res.text();
