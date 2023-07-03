@@ -203,9 +203,9 @@ export default function Main() {
                       disabled={disableInput}
                     >
                       <option>Anything V4.5</option>
-                      <option>AOM3</option>
+                      {/* <option>AOM3</option>
                       <option>Counterfeit V2.5</option>
-                      <option>Nemu (WIP)</option>
+                      <option>Nemu (WIP)</option> */}
                     </select>
                   </div>
                   <div className="pl-2">
@@ -420,9 +420,9 @@ export default function Main() {
                   disabled={disableInput}
                 >
                   <option>Anything V4.5</option>
-                  <option>AOM3</option>
+                  {/* <option>AOM3</option>
                   <option>Counterfeit V2.5</option>
-                  <option>Nemu (WIP)</option>
+                  <option>Nemu (WIP)</option> */}
                 </select>
               </div>
               <div className="pl-2">
@@ -430,6 +430,7 @@ export default function Main() {
                 <input
                   {...register("seed")}
                   className="bg-[color:var(--bg2)] w-full h-8 p-1"
+                  min={-1}
                   onChange={(x) =>
                     !Number.isNaN(Number(x.target.value)) ||
                     x.target.value === "-"
