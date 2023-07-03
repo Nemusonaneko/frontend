@@ -17,6 +17,7 @@ import downloadImage from "@/utils/downloadImage";
 import downloadPrompt from "@/utils/downloadPrompt";
 import toast from "react-hot-toast";
 import "../../theme/_import";
+import Link from "next/link";
 
 export default function Main() {
   const [genFetched, setGenFetched] = React.useState<boolean>(false);
@@ -117,6 +118,14 @@ export default function Main() {
     <>
       <div className="w-full">
         <form onSubmit={handleSubmit(onSubmit)}>
+          <p className="text-md">
+            <Link
+              href="https://twitter.com/nemusonaUwU/status/1675899519492300800"
+              target="_blank"
+            >
+              Status
+            </Link>
+          </p>
           <p className="text-sm">{`Amount Generated:`}</p>
           <div className="flex gap-3 text-sm">
             <p>{`This hour: ${waifuCount && waifuCount.hour}`}</p>
