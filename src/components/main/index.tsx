@@ -118,7 +118,7 @@ export default function Main() {
     <>
       <div className="w-full">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <p className="text-md">
+          <p className="text-2xl font-bold text-red-600 underline underline-offset-2">
             <Link
               href="https://twitter.com/nemusonaUwU/status/1675899519492300800"
               target="_blank"
