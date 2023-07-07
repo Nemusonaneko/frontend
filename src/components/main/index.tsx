@@ -120,7 +120,7 @@ export default function Main() {
         <form onSubmit={handleSubmit(onSubmit)}>
           <p className="text-2xl font-bold text-red-600 underline underline-offset-2">
             <Link
-              href="https://twitter.com/nemusonaUwU/status/1675899519492300800"
+              href="https://twitter.com/waifugeneth/status/1677461265013174274"
               target="_blank"
             >
               Status
