@@ -212,9 +212,9 @@ export default function Main() {
                       disabled={disableInput}
                     >
                       <option>Anything V4.5</option>
-                      {/* <option>AOM3</option>
+                      <option>AOM3</option>
                       <option>Counterfeit V2.5</option>
-                      <option>Nemu (WIP)</option> */}
+                      <option>Nemu (WIP)</option>
                     </select>
                   </div>
                   <div className="pl-2">
@@ -429,9 +429,9 @@ export default function Main() {
                   disabled={disableInput}
                 >
                   <option>Anything V4.5</option>
-                  {/* <option>AOM3</option>
+                  <option>AOM3</option>
                   <option>Counterfeit V2.5</option>
-                  <option>Nemu (WIP)</option> */}
+                  <option>Nemu (WIP)</option>
                 </select>
               </div>
               <div className="pl-2">
