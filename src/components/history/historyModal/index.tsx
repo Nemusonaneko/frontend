@@ -79,44 +79,47 @@ export default function HistoryModal({
         </button>
 
         <div className="p-2">
-          <div className="columns-2">
-            <Image src={url} height={512} width={512} alt="image" />
-            <div className="text-md break-all p-2">
-              <p>{`Positive Prompts:`}</p>
-              <p className="text-sm max-h-40 overflow-y-auto">
-                {data.positivePrompts}
-              </p>
-              <p>{`Negative Prompts: `}</p>
-              <p className="text-sm max-h-40 overflow-y-auto">
-                {data.negativePrompts}
-              </p>
-              <p>{`CFG Scale: ${data.cfgScale}`}</p>
-              <p>{`Denoise Strength: ${data.denoiseStrength}`}</p>
-              <p>{`Seed: ${data.seed}`}</p>
-              <p>{`Model: ${data.model}`}</p>
-            </div>
+          <div className="columns-2 p-4 flex gap-4">
+            <Image src={url} height={512} width={512} alt="image" className="rounded-md"/>
+						<div className="flex flex-col justify-evenly">
+							<div className="text-md break-all p-2">
+								<p>{`Positive Prompts:`}</p>
+								<p className="text-sm max-h-40 overflow-y-auto text-[color:var(--green-70)]">
+									{data.positivePrompts}
+								</p>
+								<p>{`Negative Prompts: `}</p>
+								<p className="text-sm max-h-40 overflow-y-auto text-[color:var(--red-70)]">
+									{data.negativePrompts}
+								</p>
+								<p>{`CFG Scale: ${data.cfgScale}`}</p>
+								<p>{`Denoise Strength: ${data.denoiseStrength}`}</p>
+								<p>{`Seed: ${data.seed}`}</p>
+								<p>{`Model: ${data.model}`}</p>
+							</div>
+							<div className="flex gap-1 items-center justify-center">
+								<button
+									className="min-w-[8rem] px-3 py-2 rounded bg-[color:var(--green)] text-[color:var(--text-on-color)] hover:bg-[color:var(--green-50)]"
+									onClick={() => downloadImage(data)}
+								>
+									Save Image
+								</button>
+								<button
+									className="min-w-[8rem] px-3 py-2 rounded bg-[color:var(--green)] text-[color:var(--text-on-color)] hover:bg-[color:var(--green-50)] disabled:opacity-30"
+									onClick={() => onReplicate()}
+									disabled={isDisabled}
+								>
+									Apply&nbsp;Settings
+								</button>
+								<button
+									className="min-w-[8rem] px-3 py-2 rounded bg-[color:var(--red)] text-[color:var(--text-on-color)] hover:bg-[color:var(--red-50)]"
+									onClick={() => onDelete()}
+								>
+									Delete
+								</button>
+							</div>
+						</div>
           </div>
-          <div className="flex gap-1 pt-1 items-center justify-end">
-            <button
-              className="w-32 bg-[color:var(--green)] text-[color:var(--text-on-color)] hover:bg-[color:var(--green-50)] rounded p-1"
-              onClick={() => downloadImage(data)}
-            >
-              Save Image
-            </button>
-            <button
-              className="w-32 bg-[color:var(--green)] text-[color:var(--text-on-color)] hover:bg-[color:var(--green-50)] rounded p-1 disabled:opacity-30"
-              onClick={() => onReplicate()}
-              disabled={isDisabled}
-            >
-              Apply&nbsp;Settings
-            </button>
-            <button
-              className="w-32 bg-[color:var(--red)] text-[color:var(--text-on-color)] hover:bg-[color:var(--red-50)] rounded p-1"
-              onClick={() => onDelete()}
-            >
-              Delete
-            </button>
-          </div>
+
         </div>
       </div>
       <div
@@ -142,17 +145,17 @@ export default function HistoryModal({
             />
           </svg>
         </button>
-        <div className=" p-4 flex flex-col gap-1">
+        <div className="mt-5 p-4 flex flex-col gap-1">
           <div className="justify-center flex">
-            <Image src={url} height={512} width={512} alt="image" />
+            <Image src={url} height={512} width={512} alt="image" className="rounded-lg"/>
           </div>
           <div className="text-md break-all pt-2">
             <p>{`Positive Prompts:`}</p>
-            <p className="text-sm max-h-[128px] overflow-y-auto">
+            <p className="text-sm max-h-[128px] overflow-y-auto text-[color:var(--green-70)]">
               {data.positivePrompts}
             </p>
             <p>{`Negative Prompts: `}</p>
-            <p className="text-sm max-h-[128px] overflow-y-auto">
+            <p className="text-sm max-h-[128px] overflow-y-auto text-[color:var(--red-70)]">
               {data.negativePrompts}
             </p>
             <p>{`CFG Scale: ${data.cfgScale}`}</p>
@@ -160,7 +163,7 @@ export default function HistoryModal({
             <p>{`Seed: ${data.seed}`}</p>
             <p>{`Model: ${data.model}`}</p>
           </div>
-          <div className="flex gap-2 justify-center flex-col md:flex-row">
+          <div className="flex grid-flow-col md:grid gap-2 justify-stretch flex-col md:flex-row">
 						<div className="space-x-2 flex ">
 							<button
 								className="bg-[color:var(--green)] text-[color:var(--text-on-color)] hover:bg-[color:var(--green-50)] rounded grow px-5 lg:py-2 py-3"
