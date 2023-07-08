@@ -1,23 +1,30 @@
 "use client";
-import Image from "next/image";
-import dogo from "../../../public/DogO.png";
-import { useForm } from "react-hook-form";
-import History from "@/components/history";
-import { FormValues } from "@/types";
-import useGetCount from "@/queries/useGetCount";
 import React from "react";
+import Image from "next/image";
+import { useForm } from "react-hook-form";
+import { useQueryClient } from "react-query";
+import toast from "react-hot-toast";
+
+import { FormValues } from "@/types";
+
+import dogo from "../../../public/DogO.png";
+import "../../theme/_import";
+
+import History from "@/components/history";
+import ImportTagsModal from "@/components/importTagsModal";
+
+import useGetCount from "@/queries/useGetCount";
 import useGetGenQueue from "@/queries/useGetGenQueue";
 import useGetGenStatus from "@/queries/useGetGenStatus";
 import useGetGenResult from "@/queries/useGetGenResult";
 import useSubmitPrompt from "@/queries/useSubmitPrompt";
-import { useQueryClient } from "react-query";
+
 import translateStatus from "@/utils/translateStatus";
-import ImportTagsModal from "@/components/importTagsModal";
 import downloadImage from "@/utils/downloadImage";
 import downloadPrompt from "@/utils/downloadPrompt";
-import toast from "react-hot-toast";
-import "../../theme/_import";
-import Link from "next/link";
+
+import DeveloperCtx from "@/components/providers/DeveloperCtx";
+import useLocal from "@/utils/useStorage.ts";
 
 export default function Main() {
   const [genFetched, setGenFetched] = React.useState<boolean>(false);
@@ -109,23 +116,13 @@ export default function Main() {
     });
   };
 
-  var [isDev, setDev] = React.useState<boolean>(false);
-  React.useEffect(() => {
-    setDev(Boolean(localStorage.getItem("user.dev")) ?? false);
-  }, []);
+	var {dev, setDev} = React.useContext(DeveloperCtx);
+	var [showPalette, setShowPalette] = useLocal('user.dev.palette', true);
 
   return (
     <>
       <div className="w-full">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <p className="text-2xl font-bold text-red-600 underline underline-offset-2">
-            <Link
-              href="https://twitter.com/waifugeneth/status/1677461265013174274"
-              target="_blank"
-            >
-              Status
-            </Link>
-          </p>
           <p className="text-sm">{`Amount Generated:`}</p>
           <div className="flex gap-3 text-sm">
             <p>{`This hour: ${waifuCount && waifuCount.hour}`}</p>
@@ -147,7 +144,7 @@ export default function Main() {
                   <p className="text-sm">Positive Prompts</p>
                   <textarea
                     {...register("positivePrompts")}
-                    className="bg-[color:var(--bg2)] w-full p-1 resize-none h-36"
+                    className="rounded-sm focus:outline focus:outline-2 outline-[color:var(--blue)] bg-[color:var(--bg2)] w-full p-1 resize-none h-36"
                     onChange={(x) =>
                       setValue("positivePrompts", x.target.value)
                     }
@@ -158,7 +155,7 @@ export default function Main() {
                   <p className="text-sm">Negative Prompts</p>
                   <textarea
                     {...register("negativePrompts")}
-                    className="bg-[color:var(--bg2)] w-full p-1 resize-none h-36"
+                    className="rounded-sm focus:outline focus:outline-2 outline-[color:var(--blue)] bg-[color:var(--bg2)] w-full p-1 resize-none h-36"
                     onChange={(x) =>
                       setValue("negativePrompts", x.target.value)
                     }
@@ -282,14 +279,14 @@ export default function Main() {
                     >
                       Save
                     </button>
-                    <button
+                    {/*<button
                       type="button"
                       className="font-bold py-1 text-[color:var(--text-on-color)] bg-[color:var(--green)] hover:bg-[color:var(--green-50)] rounded-lg px-1 text-sm disabled:opacity-30"
                       disabled={disableInput || !genData}
                       onClick={() => downloadPrompt(genData!)}
                     >
                       Save Tags
-                    </button>
+                    </button>*/}
                     <button
                       type="button"
                       className="font-bold py-1 text-[color:var(--text-on-color)] bg-[color:var(--green)] hover:bg-[color:var(--green-50)] rounded-lg px-1 text-sm disabled:opacity-30"
@@ -340,14 +337,14 @@ export default function Main() {
                 >
                   Save
                 </button>
-                <button
+                {/*<button
                   type="button"
                   className="font-bold text-[color:var(--text-on-color)] bg-[color:var(--green)] hover:bg-[color:var(--green-50)] rounded-lg px-2 text-sm disabled:opacity-30"
                   disabled={disableInput || !genData}
                   onClick={() => downloadPrompt(genData!)}
                 >
                   Save Tags
-                </button>
+                </button>*/}
                 <button
                   type="button"
                   className="font-bold text-[color:var(--text-on-color)] py-1 bg-[color:var(--green)] hover:bg-[color:var(--green-50)] rounded-lg px-2 text-sm disabled:opacity-30"
@@ -439,7 +436,6 @@ export default function Main() {
                 <input
                   {...register("seed")}
                   className="bg-[color:var(--bg2)] w-full h-8 p-1"
-                  min={-1}
                   onChange={(x) =>
                     !Number.isNaN(Number(x.target.value)) ||
                     x.target.value === "-"
@@ -489,8 +485,10 @@ export default function Main() {
       />
 
       {/* this is for creating colourschemes with mui bracketmix */}
-      {isDev ? (
+			
+      {dev && showPalette=="true"? (
         <>
+					<p onClick={()=>setShowPalette(!showPalette)}>{showPalette?"X":">"}</p>
           <div
             className="colourbox flex flex-wrap"
             style={{ width: `${60 * 11}px` }}
