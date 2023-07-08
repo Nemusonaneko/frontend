@@ -8,27 +8,24 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Nemu's Waifu Gen",
-  description: "UwU",
-  icons: {
-    icon: "/favicon.ico",
-  },
+  description: "Free Stable Diffusion interface for people who dont want to drop thousands on a good GPU UwU",
+  icons: { icon: "/favicon.ico" },
 };
+
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-
-  /* it should be noted that chrome extentions that add classes to html will cause
-     next to soft-throw "Prop `className` did not match", EG:
-
-     Warning: Prop `className` did not match. Server: "original dzmwtxok idc0_343" Client: "original"
-
-     this can be ignored!
-  */
   return (
     <html lang="en" className="original">
+			<head>
+				<link key="idx-url" rel="canonical" href="https://waifus.nemusona.com/" />
+				<meta key="graph-title" property="og:title" content={metadata.title} />
+				<meta key="graph-desc" property="og:description" content={metadata.description} />
+				<meta key="graph-img" property="og:image" content="https://waifus.nemusona.com/DogO.png" />
+			</head>
       <body className={`${inter.className} bg-[color:var(--bg0)] text-[color:var(--text)]`}>
         <Providers>
           <NavBar />
