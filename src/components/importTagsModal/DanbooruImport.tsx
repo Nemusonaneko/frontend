@@ -24,7 +24,7 @@ export default function DanbooruImport({setValues, setOpened}){
         toast.success("Successfully imported tags");
 			},
 			onError: function(e){
-				console.log(e);				
+				console.error(e);				
         toast.error(`Import failed: ${e.message}`);
 			}
 		});
