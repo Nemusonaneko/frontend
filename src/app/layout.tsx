@@ -24,7 +24,7 @@ export default function RootLayout({
         <link key="idx-url" rel="canonical" href="https://waifus.nemusona.com/" />
         <meta key="graph-title" property="og:title" content={metadata.title} />
         <meta key="graph-desc" property="og:description" content={metadata.description} />
-        <meta key="graph-img" property="og:image" content="https://waifus.nemusona.com/DogO.png" />
+        <meta key="graph-img" property="og:image" content="https://waifus.nemusona.com/cute.gif" />
       </head>
       <body className={`${inter.className} bg-[color:var(--bg0)] text-[color:var(--text)]`}>
         <Providers>
