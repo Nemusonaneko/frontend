@@ -55,7 +55,7 @@ export default function HistoryModal({
       onClick={() => setOpened(false)}
     >
       <div
-        className=" max-lg:hidden w-fit  max-w-5xl h-fit bg-[color:var(--bg0)] rounded-md relative"
+        className="max-lg:hidden w-fit  max-w-5xl h-fit bg-[color:var(--bg0)] rounded-md relative"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -91,8 +91,8 @@ export default function HistoryModal({
 								<p className="text-sm max-h-40 overflow-y-auto text-[color:var(--red-70)]">
 									{data.negativePrompts}
 								</p>
-								<p>{`CFG Scale: ${data.cfgScale}`}</p>
-								<p>{`Denoise Strength: ${data.denoiseStrength}`}</p>
+								<p>CFG Scale: <span className="text-[color:var(--purple-70)]">{data.cfgScale}</span></p>
+								<p>Denoise Strength: <span className="text-[color:var(--yellow-60)]">{data.denoiseStrength}</span></p>
 								<p>{`Seed: ${data.seed}`}</p>
 								<p>{`Model: ${data.model}`}</p>
 							</div>
@@ -123,7 +123,7 @@ export default function HistoryModal({
         </div>
       </div>
       <div
-        className=" lg:hidden w-4/5 h-fit bg-[color:var(--bg0)] rounded-md relative"
+        className="max-h-full overflow-y-scroll lg:hidden w-4/5 h-fit bg-[color:var(--bg0)] rounded-md relative"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -158,8 +158,8 @@ export default function HistoryModal({
             <p className="text-sm max-h-[128px] overflow-y-auto text-[color:var(--red-70)]">
               {data.negativePrompts}
             </p>
-            <p>{`CFG Scale: ${data.cfgScale}`}</p>
-            <p>{`Denoise Strength: ${data.denoiseStrength}`}</p>
+            <p className="text-[color:var(--purple)]">{`CFG Scale: ${data.cfgScale}`}</p>
+            <p className="text-[color:var(--yellow)]">{`Denoise Strength: ${data.denoiseStrength}`}</p>
             <p>{`Seed: ${data.seed}`}</p>
             <p>{`Model: ${data.model}`}</p>
           </div>
