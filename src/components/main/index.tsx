@@ -23,7 +23,6 @@ import translateStatus from "@/utils/translateStatus";
 import downloadImage from "@/utils/downloadImage";
 import downloadPrompt from "@/utils/downloadPrompt";
 
-import DeveloperCtx from "@/components/providers/DeveloperCtx";
 import useLocal from "@/utils/useStorage.ts";
 
 export default function Main() {
@@ -116,8 +115,7 @@ export default function Main() {
     });
   };
 
-	var {dev, setDev} = React.useContext(DeveloperCtx);
-	var [showPalette, setShowPalette] = useLocal('user.dev.palette', true);
+	var [showPalette, setShowPalette] = useLocal('user.dev.palette', "false");
 
   return (
     <>
@@ -486,7 +484,7 @@ export default function Main() {
 
       {/* this is for creating colourschemes with mui bracketmix */}
 			
-      {dev && showPalette=="true"? (
+      {showPalette=="true"? (
         <>
 					<p onClick={()=>setShowPalette(!showPalette)}>{showPalette?"X":">"}</p>
           <div

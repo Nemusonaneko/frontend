@@ -6,9 +6,6 @@ import { useQueryClient } from "react-query";
 import { toast } from "react-hot-toast";
 import React from "react";
 
-// we cant use import here, as it maps json entries to an object with getters (WHY???)
-const templateData = require('./templateEntry.json')
-
 export default function History({
 	setValues,
 	isDisabled,
@@ -24,12 +21,6 @@ export default function History({
 		queryClient.invalidateQueries();
 		toast.success("Deleted all images.")
 	};
-
-	function addTestEntry(){
-		historyData.push(templateData);
-		localStorage.setItem("history", JSON.stringify(historyData) );
-		toast.success("Added a test entry.");
-	}
 
 	return (
 		<div className="w-full pt-2">

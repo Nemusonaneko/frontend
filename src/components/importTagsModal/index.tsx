@@ -29,7 +29,7 @@ export default function ImportTagsModal({opened,setOpened,setValues}){
 		e.preventDefault();
 		setIsDragging(true);
 	}
-
+	
   if (!opened) return null;
 	return (<div
       className="fixed inset-0 bg-transparent backdrop-blur-sm bg-opacity-75 flex justify-center items-center"

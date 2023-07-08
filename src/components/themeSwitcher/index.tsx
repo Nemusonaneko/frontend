@@ -9,7 +9,6 @@ function setEvent(e: any) {
     (a) => a.identifier === (e?.target?.value || e)
   );
 
-  toast.loading(`Changing theme to ${newTheme}.`);
   if (!newTheme.identifier) return;
 
   /* remove old theme */
