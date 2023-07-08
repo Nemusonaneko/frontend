@@ -1,5 +1,5 @@
 import React from "react";
-import useGetTags from "@/queries/useGetTags";
+import useGetDanbooruTags from "@/queries/useGetDanbooruTags";
 import toast from "react-hot-toast";
 
 const danbooruRegex = /[0-9]{1,10}|https\:\/\/danbooru\.donmai\.us\/posts\/[0-9]{1,10}/;
@@ -7,7 +7,7 @@ const danbooru_fullRegex = /https\:\/\/danbooru\.donmai\.us\/posts\/[0-9]{1,10}/
 const has_queryRegex = /\?q=/;
 
 export default function DanbooruImport({setValues, setOpened}){
-  const { mutate: getTags } = useGetTags();
+  const { mutate: getTags } = useGetDanbooruTags();
 
 	function onSubmit(){
 		var source = document.getElementById('danbooruImport');
