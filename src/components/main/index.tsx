@@ -101,7 +101,7 @@ export default function Main() {
       onSuccess: () => {
         setLastGenValues(data);
         setGenFetched(false);
-        setCooldownEnd(Date.now() + 30 * 1e3);
+        setCooldownEnd(Date.now() + 10 * 1e3);
         toast.success("Added prompts to queue.");
         setToastId(toast.loading("Processing prompts..."));
         queryClient.invalidateQueries();
