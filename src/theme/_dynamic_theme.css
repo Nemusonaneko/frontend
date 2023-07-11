@@ -1,12 +1,13 @@
 /* this file is for themes that cannot be applied with tailwind */
 #theme_switcher_open{
 	top:0px;
-	padding-top:10px;
 }
 #theme_switcher_open,
 #theme_switcher_closed {
+	/* titlebar is 56px tall, the drop is positioned with fixed so this cant be done "properly", it looks good enough anyway */
+	padding-top:56px;
 	transform:translateX(-50%);
-	transition:top .2s ease-in-out;
+	transition:top .3s ease-in-out;
 }
 .themeCard span{
 	width:12px;
