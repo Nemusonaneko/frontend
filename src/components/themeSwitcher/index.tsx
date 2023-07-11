@@ -5,11 +5,12 @@ import { themeList } from "../../theme/_list";
 import { toast } from "react-hot-toast";
 
 function setEvent(e: any) {
-  var newTheme = themeList.find(
+  var newThemeI = themeList.find(
     (a) => a.identifier === (e?.target?.value || e)
-  );
-
-  if (!newTheme.identifier) return;
+  )?.identifier;
+  if (!newThemeI) return;
+  // console.log("changing theme from to", newThemeI);
+  toast.loading(`Changing theme to ${newThemeI}.`);
 
   /* remove old theme */
   document.documentElement.classList.remove(
@@ -17,9 +18,9 @@ function setEvent(e: any) {
   );
 
   /* add new theme */
-  document.documentElement.classList.add(newTheme.identifier);
-  localStorage.setItem("user.theme.identifier", newTheme.identifier);
-  toast.success(`Changed theme to ${newTheme.name}.`);
+  document.documentElement.classList.add(newThemeI);
+  localStorage.setItem("user.theme.identifier", newThemeI);
+  toast.success(`Changed theme to ${newThemeI}.`);
 }
 
 function Icon(props: any) {

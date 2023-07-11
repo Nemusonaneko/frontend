@@ -5,9 +5,6 @@ import HistoryModal from "../historyModal";
 import { FormValues, HistoryValues } from "@/types";
 import { UseFormSetValue } from "react-hook-form";
 
-/* firefox winges about images "not having a src attribute". this fixes that by defaulting to a blank pixel*/
-var blank_pixel = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-
 export default function HistoryImage({
   data,
   index,
@@ -34,7 +31,7 @@ export default function HistoryImage({
     <>
       <HistoryModal opened={opened} setOpened={setOpened} data={data} url={url} setValues={setValues} isDisabled={isDisabled} index={index} />
       <Image
-        src={url?url:blank_pixel}
+        src={url}
         height={256}
         width={256}
         alt="image"
